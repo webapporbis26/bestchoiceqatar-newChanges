@@ -16,7 +16,7 @@
         --primary-yellow: #ffcc00;
         --dark-bg: #111111;
         --light-bg: #ffffff;
-        --transition-smooth: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        --transition-smooth: all 0.3s ease-in-out;
     }
 
     body {
@@ -254,15 +254,22 @@
         font-size: var(--fs-base);
     }
 
-    /* Gallery */
     .gallery-grid img {
         width: 100%;
         height: 300px;
         object-fit: cover;
-        transition: var(--transition-smooth);
+        transition: transform 0.4s ease-in-out;
     }
 
     .gallery-grid img:hover { transform: scale(1.05); }
+
+    .transition-premium {
+        transition: transform 0.4s ease-in-out;
+    }
+
+    .transition-premium:hover {
+        transform: scale(1.05);
+    }
 
     /* Comparison Table Styles */
     .comparison-box {
@@ -350,7 +357,7 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
-        transition: transform 1.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+        transition: transform 0.5s ease-in-out;
     }
 
     .swiper-slide:hover img {
@@ -405,7 +412,7 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
-        transition: transform 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+        transition: transform 0.5s ease-in-out;
     }
 
     .product-showcase-card:hover .showcase-img {
@@ -458,6 +465,9 @@
 
 <main id="main">
     <!-- Side Banner -->
+    <div class="side-banner">
+        Creative Fabrication
+    </div>
 
     <!-- Hero Section -->
     <section class="premium-hero p-0">
@@ -609,13 +619,29 @@
                 </div>
                 <div class="col-lg-12">
                     <div class="row g-4">
-                        @for (int j = 1; j <= 6; j++)
+                        @{
+                            var modularImages = new[]
+                            {
+                                new { Desktop = "~/Uploads/modular/desktop/03 (1).jpg", Mobile = "~/Uploads/modular/mobile/03 (1).jpeg" },
+                                new { Desktop = "~/Uploads/modular/desktop/03 (2).jpg", Mobile = "~/Uploads/modular/mobile/03 (2).jpeg" },
+                                new { Desktop = "~/Uploads/modular/desktop/03 (3).jpg", Mobile = "" },
+                                new { Desktop = "~/Uploads/modular/desktop/03 (4).jpg", Mobile = "~/Uploads/modular/mobile/03 (4).jpeg" },
+                                new { Desktop = "~/Uploads/modular/desktop/03 (5).jpg", Mobile = "~/Uploads/modular/mobile/03 (5).jpeg" },
+                                new { Desktop = "~/Uploads/modular/desktop/03 (6).jpg", Mobile = "~/Uploads/modular/mobile/03 (6).jpeg" }
+                            };
+                        }
+                        @foreach (var img in modularImages)
                         {
-                            var imgUrl = Url.Content("~/Uploads/WhatsApp Image 2026-04-22 at 3.41." + (41 + j) + " PM.jpeg");
+                            var desktopUrl = Url.Content(img.Desktop);
+                            var mobileUrl = !string.IsNullOrEmpty(img.Mobile) ? Url.Content(img.Mobile) : desktopUrl;
                             <div class="col-md-4 col-sm-6">
-                                <a href="@imgUrl" class="glightbox">
+                                <a href="@desktopUrl" class="glightbox">
                                     <div class="position-relative overflow-hidden" style="height: 280px; border-radius: 15px;">
-                                        <img src="@imgUrl" class="w-100 h-100 object-fit-cover transition-premium" alt="Modular Cabin Installation">
+                                        <picture>
+                                            <source media="(max-width: 767px)" srcset="@mobileUrl">
+                                            <source media="(min-width: 768px)" srcset="@desktopUrl">
+                                            <img src="@desktopUrl" class="w-100 h-100 object-fit-cover transition-premium" alt="Modular Cabin Installation">
+                                        </picture>
                                     </div>
                                 </a>
                             </div>
