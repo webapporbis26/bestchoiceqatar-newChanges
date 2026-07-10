@@ -992,7 +992,7 @@ body.lock-scroll .premium-floating-nav {
 }
 
 #hero .hero-wrap {
-    height: 620px;
+    height: var(--hero-height, 620px);
 }
 
 #hero .hero-copy {
@@ -1017,10 +1017,15 @@ body.lock-scroll .premium-floating-nav {
     pointer-events: none !important;
 }
 
-/* Hero carousel: only the active slide may receive clicks (fade stacks all slides) */
 #hero .hero-swiper-premium .swiper-slide {
     pointer-events: none !important;
-    z-index: 0 !important;
+    z-index: 1 !important;
+}
+
+#hero .hero-swiper-premium .swiper-slide .hero-content,
+#hero .hero-swiper-premium .swiper-slide .hero-content * {
+    pointer-events: none !important;
+    visibility: hidden;
 }
 
 #hero .hero-swiper-premium .swiper-slide.swiper-slide-active {
@@ -1028,12 +1033,9 @@ body.lock-scroll .premium-floating-nav {
     z-index: 5 !important;
 }
 
-#hero .hero-swiper-premium .swiper-slide:not(.swiper-slide-active) .hero-content {
-    visibility: hidden;
-    pointer-events: none !important;
-}
-
-#hero .swiper-slide-active .hero-content {
+#hero .hero-swiper-premium .swiper-slide.swiper-slide-active .hero-content,
+#hero .hero-swiper-premium .swiper-slide.swiper-slide-active .hero-content * {
+    visibility: visible;
     pointer-events: auto !important;
 }
 
@@ -1058,6 +1060,7 @@ body.lock-scroll .premium-floating-nav {
 
 #hero .hero-swiper-premium .swiper-slide-active {
     pointer-events: auto !important;
+    cursor: pointer !important;
 }
 
 #hero .hero-pagination {
@@ -1067,31 +1070,47 @@ body.lock-scroll .premium-floating-nav {
 
 @media (max-width: 991.98px) {
     #hero .hero-actions {
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: wrap;
         align-items: center;
-        gap: 10px;
+        justify-content: center;
+        gap: 12px;
     }
 
     #hero .hero-actions .btn-bc,
     #hero .hero-actions--compact .btn-bc {
         width: auto;
-        max-width: min(280px, 82vw);
+        max-width: none;
         flex: none;
         min-width: 0;
+        white-space: nowrap;
     }
 
     #hero .hero-actions--compact {
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: wrap;
         align-items: center;
     }
 }
 
 @media (max-width: 575.98px) {
+    #hero .hero-actions {
+        flex-direction: column !important;
+        align-items: center !important;
+        width: 100% !important;
+        box-sizing: border-box;
+        padding: 0 15px;
+    }
     #hero .hero-actions .btn-bc,
     #hero .hero-actions--compact .btn-bc {
-        max-width: min(240px, 78vw);
-        padding: 9px 14px;
-        font-size: 0.62rem;
+        width: 100% !important;
+        max-width: 320px !important;
+        padding: 11px 18px;
+        font-size: 0.72rem;
+        letter-spacing: 0.8px;
+        box-sizing: border-box;
+        justify-content: center;
+        white-space: nowrap;
     }
 }
 

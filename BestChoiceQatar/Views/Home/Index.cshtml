@@ -92,12 +92,22 @@
         width: 100%;
         overflow: hidden;
         --slide-accent: #ffcc00;
-        z-index: 0 !important;
+        z-index: 1 !important;
         pointer-events: none !important;
+    }
+    .hero-swiper-premium .swiper-slide .hero-content,
+    .hero-swiper-premium .swiper-slide .hero-content * {
+        pointer-events: none !important;
+        visibility: hidden;
     }
     .hero-swiper-premium .swiper-slide.swiper-slide-active {
         z-index: 5 !important;
         pointer-events: auto !important;
+    }
+    .hero-swiper-premium .swiper-slide.swiper-slide-active .hero-content,
+    .hero-swiper-premium .swiper-slide.swiper-slide-active .hero-content * {
+        pointer-events: auto !important;
+        visibility: visible;
     }
     
     /* Theme overrides for specific slides */
@@ -144,36 +154,6 @@
     .swiper-slide-active .hero-content {
         z-index: 25;
         pointer-events: auto !important;
-    }
-
-    .hero-swiper-premium .swiper-slide:not(.swiper-slide-active) .hero-content {
-        visibility: hidden;
-        pointer-events: none !important;
-    }
-
-    .hero-content .hero-copy,
-    .hero-content .hero-actions {
-        pointer-events: auto !important;
-    }
-
-    .hero-content a.btn-bc,
-    .hero-content button.btn-bc,
-    .hero-content .hero-actions a,
-    .hero-content .hero-actions button,
-    .hero-content .hero-cta {
-        pointer-events: auto !important;
-        cursor: pointer !important;
-        position: relative;
-        z-index: 100 !important;
-        touch-action: manipulation;
-        -webkit-tap-highlight-color: transparent;
-    }
-
-    .hero-content .hero-cta:hover,
-    .hero-content .hero-cta:focus-visible {
-        opacity: 1 !important;
-    }
-
     .hero-copy {
         max-width: 800px;
         padding: 0;
@@ -333,21 +313,24 @@
         .hero-h1 { font-size: clamp(1.25rem, 5vw, 1.65rem); }
         .hero-subtext { margin: 0 auto 16px; }
         .hero-actions {
-            flex-direction: column;
+            flex-direction: row;
+            flex-wrap: wrap;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            gap: 12px;
         }
         .hero-actions .btn-bc,
         .hero-actions--compact .btn-bc {
             width: auto;
-            max-width: min(280px, 82vw);
+            max-width: none;
             flex: none;
             min-width: 0;
             justify-content: center;
+            white-space: nowrap;
         }
         .hero-actions--compact {
-            flex-direction: column;
+            flex-direction: row;
+            flex-wrap: wrap;
             align-items: center;
         }
         .hero-pagination { 
@@ -369,12 +352,23 @@
         .hero-copy { padding-top: 10px; }
         .hero-h1 { font-size: 1.2rem; }
         .hero-subtext { font-size: 0.85rem; line-height: 1.45; }
+        .hero-actions {
+            flex-direction: column !important;
+            align-items: center !important;
+            width: 100% !important;
+            box-sizing: border-box;
+            padding: 0 15px;
+        }
         .hero-actions .btn-bc,
         .hero-actions--compact .btn-bc {
-            max-width: min(240px, 78vw);
-            padding: 9px 14px;
-            font-size: 0.62rem;
-            letter-spacing: 0.4px;
+            width: 100% !important;
+            max-width: 320px !important;
+            padding: 11px 18px;
+            font-size: 0.72rem;
+            letter-spacing: 0.8px;
+            box-sizing: border-box;
+            justify-content: center;
+            white-space: nowrap;
         }
     }
 
@@ -1010,7 +1004,16 @@
                                 Custom Solutions - Designed to your exact project specifications
                             </li>
                         </ul>
-                        <a href="/about" class="btn-bc btn-bc-yellow">READ COMPANY PROFILE <span class="material-symbols-outlined">arrow_forward</span></a>
+                        <div class="d-flex flex-wrap gap-3 align-items-center">
+                            <a href="/about" class="btn-bc btn-bc-yellow" style="background:var(--primary-bc);color:#000;">
+                                READ MORE ABOUT US
+                                <span class="material-symbols-outlined">info</span>
+                            </a>
+                            <a href="/about" class="btn-bc" style="border:2px solid #222;color:#222;background:transparent;">
+                                READ COMPANY PROFILE
+                                <span class="material-symbols-outlined">arrow_forward</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1939,14 +1942,6 @@
                     pagination: {
                         el: '.hero-pagination',
                         clickable: true,
-                    },
-                    on: {
-                        init: function () {
-                            updateHeroSlideClickability(this);
-                        },
-                        slideChangeTransitionEnd: function () {
-                            updateHeroSlideClickability(this);
-                        }
                     }
                 });
 
