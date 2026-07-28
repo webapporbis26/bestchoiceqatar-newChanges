@@ -663,6 +663,8 @@ body.lock-scroll {
 }
 
 /* 🚨 FLOATING ELEMENT LOCKDOWN v10.0 */
+#chatbase-bubble-window,
+.chatbase-bubble-window {
   position: fixed !important;
   right: 15px !important;
   left: auto !important;

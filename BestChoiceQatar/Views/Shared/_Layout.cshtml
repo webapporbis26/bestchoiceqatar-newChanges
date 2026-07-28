@@ -464,6 +464,32 @@
         })();
     </script>
     
+    <!-- Safety Scroll Unlock: Remove lock-scroll on page load/focus to prevent stuck scroll -->
+    <script>
+        (function() {
+            function unlockScroll() {
+                document.documentElement.classList.remove("lock-scroll");
+                document.body.classList.remove("lock-scroll");
+                document.documentElement.style.removeProperty("overflow");
+                document.body.style.removeProperty("overflow");
+            }
+            // Unlock on initial load
+            if (document.readyState === "loading") {
+                document.addEventListener("DOMContentLoaded", unlockScroll);
+            } else {
+                unlockScroll();
+            }
+            // Unlock when user returns to tab (prevents stuck state after back navigation)
+            document.addEventListener("visibilitychange", function() {
+                if (document.visibilityState === "visible") {
+                    // Only unlock if no drawer is actually open
+                    var anyOpen = document.querySelector("#mobileDrawer.open, #servicesDrawer.open, .deskHamburgerOverlay.open");
+                    if (!anyOpen) unlockScroll();
+                }
+            });
+        })();
+    </script>
+
     <!-- Native Smooth Scroll for Anchor Links -->
     <script>
         document.addEventListener("DOMContentLoaded", () => {
