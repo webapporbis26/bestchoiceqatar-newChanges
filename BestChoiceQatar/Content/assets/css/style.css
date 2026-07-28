@@ -1,4 +1,4 @@
-:root {
+﻿:root {
   --header-height: 70px;
   --header-height-scrolled: 65px;
   --header-logo-height: 50px;
@@ -2835,3 +2835,16 @@ section {
     background: rgba(255, 204, 0, 0.05);
 }
 
+
+
+/* ==========================================
+   SCROLL FIX v1.0 - EMERGENCY OVERRIDE
+   Prevents loader overlay from blocking scroll
+   ========================================== */
+#global-loader,
+.bc-loader-overlay,
+.bc-loader-overlay.show {
+    pointer-events: none !important;
+    -ms-touch-action: auto !important;
+    touch-action: auto !important;
+}
