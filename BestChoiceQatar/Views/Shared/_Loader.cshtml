@@ -41,11 +41,13 @@
         opacity: 0;
         visibility: hidden;
         transition: opacity 0.4s ease, visibility 0.4s ease;
+        pointer-events: none !important; /* CRITICAL: Never block scroll or user interaction */
     }
 
     .bc-loader-overlay.show {
         opacity: 1;
         visibility: visible;
+        pointer-events: none !important; /* Even when visible, don't block scroll */
     }
 
     /* 2. Modern Spinner Animation */
