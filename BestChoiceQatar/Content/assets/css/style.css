@@ -453,13 +453,10 @@ html, body {
     padding: 0 !important;
 }
 
-/* Scroll Lock Helper */
+/* Scroll Lock Helper - Only block overflow, NOT touch-action (touch-action:none kills all mobile scroll) */
 html.lock-scroll, 
 body.lock-scroll {
     overflow: hidden !important;
-    touch-action: none;
-    -webkit-overflow-scrolling: none;
-    overflow-scrolling: none;
 }
 
 /* ── Desktop Nav UL (NOT the mobile drawer) ── */

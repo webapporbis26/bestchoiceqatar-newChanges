@@ -464,25 +464,36 @@
         })();
     </script>
     
-    <!-- Safety Scroll Unlock: Remove lock-scroll on page load/focus to prevent stuck scroll -->
+    <!-- Safety Scroll Unlock: Remove ALL scroll-lock classes on page load to prevent stuck scroll -->
     <script>
         (function() {
             function unlockScroll() {
+                // Remove drawer-related scroll locks
                 document.documentElement.classList.remove("lock-scroll");
                 document.body.classList.remove("lock-scroll");
+                // Remove glightbox-open lock (glightbox adds overflow:hidden to html when opened)
+                document.documentElement.classList.remove("glightbox-open");
+                document.body.classList.remove("glightbox-open");
+                // Remove any inline overflow styles that may have been set
                 document.documentElement.style.removeProperty("overflow");
                 document.body.style.removeProperty("overflow");
+                document.documentElement.style.removeProperty("touch-action");
+                document.body.style.removeProperty("touch-action");
             }
-            // Unlock on initial load
+            // Unlock on initial load (DOMContentLoaded fires before JS libs run)
             if (document.readyState === "loading") {
                 document.addEventListener("DOMContentLoaded", unlockScroll);
             } else {
                 unlockScroll();
             }
-            // Unlock when user returns to tab (prevents stuck state after back navigation)
+            // Also unlock on window load (after all scripts have run)
+            window.addEventListener("load", function() {
+                var anyOpen = document.querySelector("#mobileDrawer.open, #servicesDrawer.open, .deskHamburgerOverlay.open");
+                if (!anyOpen) unlockScroll();
+            });
+            // Unlock when user returns to tab (back navigation may leave scroll locked)
             document.addEventListener("visibilitychange", function() {
                 if (document.visibilityState === "visible") {
-                    // Only unlock if no drawer is actually open
                     var anyOpen = document.querySelector("#mobileDrawer.open, #servicesDrawer.open, .deskHamburgerOverlay.open");
                     if (!anyOpen) unlockScroll();
                 }
