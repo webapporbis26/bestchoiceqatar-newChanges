@@ -1,0 +1,24 @@
+{
+  "name": "bestchoiceqatar-newchanges",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webapporbis26/bestchoiceqatar-newChanges.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/webapporbis26/bestchoiceqatar-newChanges/issues"
+  },
+  "homepage": "https://github.com/webapporbis26/bestchoiceqatar-newChanges#readme",
+  "dependencies": {
+    "sharp": "^0.35.3"
+  }
+}

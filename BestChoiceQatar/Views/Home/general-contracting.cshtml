@@ -38,7 +38,7 @@
 
         <div class="row">
             <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
-                <img src="~/Uploads/Products/@_product.Image" class="img-fluid" alt="Experienced General Contracting Services">
+                <img src="~/Uploads/Products/@_product.Image" class="img-fluid" alt="Experienced General Contracting Services" loading="lazy">
             </div>
             <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right" data-aos-delay="100">
                 <h1>@_product.Title</h1>
@@ -66,16 +66,16 @@
                         List<string> _files = _product.ChildImages.Split('|').ToList();
                         foreach (var _fileName in _files.Where(f => !string.IsNullOrEmpty(f)).ToList())
                         {
-                            <div class="swiper-slide"><a href="~/Uploads/Products/@_fileName" class="glightbox"><img src="~/Uploads/Products/@_fileName" class="img-fluid" alt="Experienced General Contracting Services"></a></div>
+                            <div class="swiper-slide"><a href="~/Uploads/Products/@_fileName" class="glightbox"><img src="~/Uploads/Products/@_fileName" class="img-fluid" alt="Experienced General Contracting Services" loading="lazy"></a></div>
                         }
                     }
 
-                    @*<div class="swiper-slide"><a href="~/content/assets/img/Products/General Contracting/General Contracting-1.jpg" class="glightbox"><img src="~/content/assets/img/Products/General Contracting/General Contracting-1.jpg" class="img-fluid" alt="Experienced General Contracting Services"></a></div>
-                    <div class="swiper-slide"><a href="~/content/assets/img/Products/General Contracting/General Contracting-2.jpg" class="glightbox"><img src="~/content/assets/img/Products/General Contracting/General Contracting-2.jpg" class="img-fluid" alt="Experienced General Contracting Services"></a></div>
-                    <div class="swiper-slide"><a href="~/content/assets/img/Products/General Contracting/General Contracting-3.jpg" class="glightbox"><img src="~/content/assets/img/Products/General Contracting/General Contracting-3.jpg" class="img-fluid" alt="Experienced General Contracting Services"></a></div>
-                    <div class="swiper-slide"><a href="~/content/assets/img/Products/General Contracting/General Contracting-4.jpg" class="glightbox"><img src="~/content/assets/img/Products/General Contracting/General Contracting-4.jpg" class="img-fluid" alt="Experienced General Contracting Services"></a></div>
-                    <div class="swiper-slide"><a href="~/content/assets/img/Products/General Contracting/General Contracting-5.JPG" class="glightbox"><img src="~/content/assets/img/Products/General Contracting/General Contracting-5.jpg" class="img-fluid" alt="Experienced General Contracting Services"></a></div>
-                    <div class="swiper-slide"><a href="~/content/assets/img/Products/General Contracting/General Contracting-6.JPG" class="glightbox"><img src="~/content/assets/img/Products/General Contracting/General Contracting-6.jpg" class="img-fluid" alt="Experienced General Contracting Services"></a></div>*@
+                    @*<div class="swiper-slide"><a href="~/content/assets/img/Products/General Contracting/General Contracting-1.webp" class="glightbox"><img src="~/content/assets/img/Products/General Contracting/General Contracting-1.webp" class="img-fluid" alt="Experienced General Contracting Services" width="850" height="600" loading="lazy"></a></div>
+                    <div class="swiper-slide"><a href="~/content/assets/img/Products/General Contracting/General Contracting-2.webp" class="glightbox"><img src="~/content/assets/img/Products/General Contracting/General Contracting-2.webp" class="img-fluid" alt="Experienced General Contracting Services" width="850" height="600" loading="lazy"></a></div>
+                    <div class="swiper-slide"><a href="~/content/assets/img/Products/General Contracting/General Contracting-3.webp" class="glightbox"><img src="~/content/assets/img/Products/General Contracting/General Contracting-3.webp" class="img-fluid" alt="Experienced General Contracting Services" width="850" height="600" loading="lazy"></a></div>
+                    <div class="swiper-slide"><a href="~/content/assets/img/Products/General Contracting/General Contracting-4.webp" class="glightbox"><img src="~/content/assets/img/Products/General Contracting/General Contracting-4.webp" class="img-fluid" alt="Experienced General Contracting Services" width="850" height="600" loading="lazy"></a></div>
+                    <div class="swiper-slide"><a href="~/content/assets/img/Products/General Contracting/General Contracting-5.webp" class="glightbox"><img src="~/content/assets/img/Products/General Contracting/General Contracting-5.jpg" class="img-fluid" alt="Experienced General Contracting Services" loading="lazy"></a></div>
+                    <div class="swiper-slide"><a href="~/content/assets/img/Products/General Contracting/General Contracting-6.webp" class="glightbox"><img src="~/content/assets/img/Products/General Contracting/General Contracting-6.jpg" class="img-fluid" alt="Experienced General Contracting Services" loading="lazy"></a></div>*@
 
                 </div>
                 <div class="swiper-pagination"></div>

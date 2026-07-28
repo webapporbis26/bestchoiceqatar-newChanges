@@ -23,7 +23,7 @@
 
 
 <!-- ======= Breadcrumbs ======= -->
-<div class="breadcrumbs d-flex align-items-center" style="background-image: url('../content/assets/img/header/Fabrication.jpg');">
+<div class="breadcrumbs d-flex align-items-center" style="background-image: url('../content/assets/img/header/Fabrication.webp');">
     <div class="container position-relative d-flex flex-column align-items-center">
 
         <h2>Steel & Aluminum Fabrication</h2>
@@ -40,7 +40,7 @@
 
         <div class="row">
             <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
-                <img src="~/Uploads/Products/@_product.Image" class="img-fluid" alt="Steel and Aluminum Fabrication">
+                <img src="~/Uploads/Products/@_product.Image" class="img-fluid" alt="Steel and Aluminum Fabrication" loading="lazy">
             </div>
             <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right" data-aos-delay="100">
                 <h1>@_product.Title</h1>
@@ -66,16 +66,16 @@
                     List<string> _files = _product.ChildImages.Split('|').ToList();
                     foreach (var _fileName in _files.Where(f => !string.IsNullOrEmpty(f)).ToList())
                     {
-                        <div class="swiper-slide"><a href="~/Uploads/Products/@_fileName" class="glightbox"><img src="~/Uploads/Products/@_fileName" class="img-fluid" alt="Steel and Aluminum Fabrication"></a></div>
+                        <div class="swiper-slide"><a href="~/Uploads/Products/@_fileName" class="glightbox"><img src="~/Uploads/Products/@_fileName" class="img-fluid" alt="Steel and Aluminum Fabrication" loading="lazy"></a></div>
                     }
                 }
 
-                @*<div class="swiper-slide"><a href="~/content/assets/img/Products/Steel & Aluminum Fabrication/Fabrication-1.jpg" class="glightbox"><img src="~/content/assets/img/Products/Steel & Aluminum Fabrication/Fabrication-1.jpg" class="img-fluid" alt="Steel and Aluminum Fabrication"></a></div>
-                    <div class="swiper-slide"><a href="~/content/assets/img/Products/Steel & Aluminum Fabrication/Fabrication-2.jpg" class="glightbox"><img src="~/content/assets/img/Products/Steel & Aluminum Fabrication/Fabrication-2.jpg" class="img-fluid" alt="Steel and Aluminum Fabrication"></a></div>
-                    <div class="swiper-slide"><a href="~/content/assets/img/Products/Steel & Aluminum Fabrication/Fabrication-3.jpg" class="glightbox"><img src="~/content/assets/img/Products/Steel & Aluminum Fabrication/Fabrication-3.jpg" class="img-fluid" alt="Steel and Aluminum Fabrication"></a></div>
-                    <div class="swiper-slide"><a href="~/content/assets/img/Products/Steel & Aluminum Fabrication/Fabrication-4.jpg" class="glightbox"><img src="~/content/assets/img/Products/Steel & Aluminum Fabrication/Fabrication-4.jpg" class="img-fluid" alt="Steel and Aluminum Fabrication"></a></div>
-                    <div class="swiper-slide"><a href="~/content/assets/img/Products/Steel & Aluminum Fabrication/Fabrication-5.jpg" class="glightbox"><img src="~/content/assets/img/Products/Steel & Aluminum Fabrication/Fabrication-5.jpg" class="img-fluid" alt="Steel and Aluminum Fabrication"></a></div>
-                    <div class="swiper-slide"><a href="~/content/assets/img/Products/Steel & Aluminum Fabrication/Fabrication-6.jpg" class="glightbox"><img src="~/content/assets/img/Products/Steel & Aluminum Fabrication/Fabrication-6.jpg" class="img-fluid" alt="Steel and Aluminum Fabrication"></a></div>*@
+                @*<div class="swiper-slide"><a href="~/content/assets/img/Products/Steel & Aluminum Fabrication/Fabrication-1.webp" class="glightbox"><img src="~/content/assets/img/Products/Steel & Aluminum Fabrication/Fabrication-1.webp" class="img-fluid" alt="Steel and Aluminum Fabrication" width="850" height="600" loading="lazy"></a></div>
+                    <div class="swiper-slide"><a href="~/content/assets/img/Products/Steel & Aluminum Fabrication/Fabrication-2.webp" class="glightbox"><img src="~/content/assets/img/Products/Steel & Aluminum Fabrication/Fabrication-2.webp" class="img-fluid" alt="Steel and Aluminum Fabrication" width="850" height="600" loading="lazy"></a></div>
+                    <div class="swiper-slide"><a href="~/content/assets/img/Products/Steel & Aluminum Fabrication/Fabrication-3.webp" class="glightbox"><img src="~/content/assets/img/Products/Steel & Aluminum Fabrication/Fabrication-3.webp" class="img-fluid" alt="Steel and Aluminum Fabrication" width="850" height="600" loading="lazy"></a></div>
+                    <div class="swiper-slide"><a href="~/content/assets/img/Products/Steel & Aluminum Fabrication/Fabrication-4.webp" class="glightbox"><img src="~/content/assets/img/Products/Steel & Aluminum Fabrication/Fabrication-4.webp" class="img-fluid" alt="Steel and Aluminum Fabrication" width="850" height="600" loading="lazy"></a></div>
+                    <div class="swiper-slide"><a href="~/content/assets/img/Products/Steel & Aluminum Fabrication/Fabrication-5.jpg" class="glightbox"><img src="~/content/assets/img/Products/Steel & Aluminum Fabrication/Fabrication-5.jpg" class="img-fluid" alt="Steel and Aluminum Fabrication" loading="lazy"></a></div>
+                    <div class="swiper-slide"><a href="~/content/assets/img/Products/Steel & Aluminum Fabrication/Fabrication-6.jpg" class="glightbox"><img src="~/content/assets/img/Products/Steel & Aluminum Fabrication/Fabrication-6.jpg" class="img-fluid" alt="Steel and Aluminum Fabrication" loading="lazy"></a></div>*@
 
             </div>
             <div class="swiper-pagination"></div>
