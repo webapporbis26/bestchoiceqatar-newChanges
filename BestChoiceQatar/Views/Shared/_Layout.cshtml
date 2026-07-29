@@ -47,7 +47,7 @@
 
 
     <!-- Template Main CSS File (w/ Cache Buster V2.5) -->
-    <link href="~/Content/assets/css/style.css?v=18.1" rel="stylesheet">
+    <link href="~/Content/assets/css/style.css?v=19.0" rel="stylesheet">
 
     <!-- Infrastructure & Icons -->
     <link rel="stylesheet" href="@("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0")" />
@@ -469,39 +469,47 @@
         })();
     </script>
     
-    <!-- Safety Scroll Unlock: Remove ALL scroll-lock classes on page load to prevent stuck scroll -->
+    <!-- Safety Scroll Unlock v2.0: Aggressively prevent stuck scroll -->
     <script>
         (function() {
             function unlockScroll() {
-                // Remove drawer-related scroll locks
+                var anyOpen = document.querySelector("#mobileDrawer.open, #servicesDrawer.open, .deskHamburgerOverlay.open");
+                if (anyOpen) return; // Don't unlock if a drawer is intentionally open
                 document.documentElement.classList.remove("lock-scroll");
                 document.body.classList.remove("lock-scroll");
-                // Remove glightbox-open lock (glightbox adds overflow:hidden to html when opened)
                 document.documentElement.classList.remove("glightbox-open");
                 document.body.classList.remove("glightbox-open");
-                // Remove any inline overflow styles that may have been set
                 document.documentElement.style.removeProperty("overflow");
                 document.body.style.removeProperty("overflow");
                 document.documentElement.style.removeProperty("touch-action");
                 document.body.style.removeProperty("touch-action");
             }
-            // Unlock on initial load (DOMContentLoaded fires before JS libs run)
+
+            // 1. Unlock IMMEDIATELY on script execution
+            unlockScroll();
+
+            // 2. Unlock on DOMContentLoaded (before images/3rd-party finish)
             if (document.readyState === "loading") {
                 document.addEventListener("DOMContentLoaded", unlockScroll);
-            } else {
-                unlockScroll();
             }
-            // Also unlock on window load (after all scripts have run)
-            window.addEventListener("load", function() {
-                var anyOpen = document.querySelector("#mobileDrawer.open, #servicesDrawer.open, .deskHamburgerOverlay.open");
-                if (!anyOpen) unlockScroll();
-            });
-            // Unlock when user returns to tab (back navigation may leave scroll locked)
+
+            // 3. Fallback: Force unlock after 2 seconds no matter what
+            setTimeout(unlockScroll, 2000);
+
+            // 4. Patrol: Check every 500ms for first 5 seconds to catch rogue scroll locks
+            var patrolCount = 0;
+            var patrol = setInterval(function() {
+                unlockScroll();
+                patrolCount++;
+                if (patrolCount >= 10) clearInterval(patrol);
+            }, 500);
+
+            // 5. Also unlock on window load (belt-and-suspenders)
+            window.addEventListener("load", unlockScroll);
+
+            // 6. Unlock when user returns to tab
             document.addEventListener("visibilitychange", function() {
-                if (document.visibilityState === "visible") {
-                    var anyOpen = document.querySelector("#mobileDrawer.open, #servicesDrawer.open, .deskHamburgerOverlay.open");
-                    if (!anyOpen) unlockScroll();
-                }
+                if (document.visibilityState === "visible") unlockScroll();
             });
         })();
     </script>
