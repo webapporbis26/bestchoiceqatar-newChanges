@@ -32,6 +32,10 @@
 }
 
 /* Layout Restoration - v12.0 Core Baseline */
+html, :root {
+    scroll-behavior: auto !important;
+}
+
 * {
     box-sizing: border-box;
 }
