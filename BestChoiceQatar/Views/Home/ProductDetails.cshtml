@@ -25,6 +25,7 @@
         public List<KeyValuePair<string, string>> Specifications { get; set; }
         public string MainImage { get; set; }
         public List<string> GalleryImages { get; set; }
+        public List<string> GalleryImagesMobile { get; set; }
         public string MetaDescription { get; set; }
         public string MetaKeywords { get; set; }
         public string SectionLabel { get; set; }
@@ -111,7 +112,17 @@
                     new KeyValuePair<string, string>("Lighting", "Internal LED + External spotlight provisions"),
                     new KeyValuePair<string, string>("Finish", "Two-tone automotive grade epoxy paint")
                 },
-                GalleryImages = new List<string> { "/Content/assets/img/Products/cabin/cabin-8.jpg", "/Content/assets/img/Products/cabin/cabin-7.jpg", "/Uploads/WhatsApp Image 2026-04-22 at 3.41.46 PM.jpeg" },
+                GalleryImages = new List<string> {
+                    "/Uploads/Security Cabin/desktop/05 (1).jpg",
+                    "/Uploads/Security Cabin/desktop/05 (3).jpg",
+                    "/Uploads/Security Cabin/desktop/05 (6).jpg"
+                },
+                GalleryImagesMobile = new List<string> {
+                    "/Uploads/Security Cabin/mobile/05 (1).jpeg",
+                    "/Uploads/Security Cabin/mobile/05 (2).jpg",
+                    "/Uploads/Security Cabin/mobile/05 (4).jpg",
+                    "/Uploads/Security Cabin/mobile/05 (5).jpg"
+                },
                 MetaDescription = "Compact security guard cabins and checkpoints in Qatar.",
                 MetaKeywords = "guard cabin Qatar, security booth Doha, gate house cabis"
             },
@@ -138,7 +149,25 @@
                     new KeyValuePair<string, string>("Tanking", "Optional integrated fresh/waste water tanks"),
                     new KeyValuePair<string, string>("Insulation", "Moisture-sealed EPS Panels")
                 },
-                GalleryImages = new List<string> { "/Content/assets/img/Products/cabin/cabin-10.jpg", "/Content/assets/img/Products/cabin/cabin-11.jpg", "/Uploads/WhatsApp Image 2026-04-22 at 3.41.43 PM.jpeg" },
+                GalleryImages = new List<string> {
+                    "/Uploads/Toilet/desktop/06 (1).jpg",
+                    "/Uploads/Toilet/desktop/06 (5).jpeg",
+                    "/Uploads/Toilet/desktop/06 (6).jpeg",
+                    "/Uploads/Toilet/desktop/06 (10).jpeg",
+                    "/Uploads/Toilet/desktop/06 (11).jpeg",
+                    "/Uploads/Toilet/desktop/06 (12).jpeg"
+                },
+                GalleryImagesMobile = new List<string> {
+                    "/Uploads/Toilet/mobile/06 (1).jpeg",
+                    "/Uploads/Toilet/mobile/06 (2).jpeg",
+                    "/Uploads/Toilet/mobile/06 (3).jpeg",
+                    "/Uploads/Toilet/mobile/06 (4).jpeg",
+                    "/Uploads/Toilet/mobile/06 (7).jpeg",
+                    "/Uploads/Toilet/mobile/06 (8).jpeg",
+                    "/Uploads/Toilet/mobile/06 (9).jpeg",
+                    "/Uploads/Toilet/mobile/06 (13).jpeg",
+                    "/Uploads/Toilet/mobile/06 (14).jpeg"
+                },
                 MetaDescription = "Portable toilet and sanitary cabins for construction sites in Qatar.",
                 MetaKeywords = "toilet cabin Qatar, sanitary block Doha, portable WC"
             },
@@ -192,7 +221,24 @@
                     new KeyValuePair<string, string>("Cladding", "Premium flat-panel look with epoxy finish"),
                     new KeyValuePair<string, string>("Turnaround", "Engineered design + Fast-track fabrication")
                 },
-                GalleryImages = new List<string> { "/Content/assets/img/Products/cabin/multi-story-hero.png", "/Uploads/WhatsApp Image 2026-04-22 at 3.41.42 PM.jpeg", "/Content/assets/img/Products/cabin/cabin-3.jpg" },
+                GalleryImages = new List<string> {
+                    "/Uploads/Modular/desktop/03 (1).jpg",
+                    "/Uploads/Modular/desktop/03 (2).jpg",
+                    "/Uploads/Modular/desktop/03 (3).jpg",
+                    "/Uploads/Modular/desktop/03 (3).jpeg",
+                    "/Uploads/Modular/desktop/03 (4).jpg",
+                    "/Uploads/Modular/desktop/03 (5).jpg",
+                    "/Uploads/Modular/desktop/03 (6).jpg",
+                    "/Uploads/Modular/desktop/03 (7).jpeg",
+                    "/Uploads/Modular/desktop/03 (8).jpeg"
+                },
+                GalleryImagesMobile = new List<string> {
+                    "/Uploads/Modular/mobile/03 (1).jpeg",
+                    "/Uploads/Modular/mobile/03 (2).jpeg",
+                    "/Uploads/Modular/mobile/03 (4).jpeg",
+                    "/Uploads/Modular/mobile/03 (5).jpeg",
+                    "/Uploads/Modular/mobile/03 (6).jpeg"
+                },
                 MetaDescription = "Multi-story and double-story porta cabins in Qatar.",
                 MetaKeywords = "double story cabin Qatar, stacked porta cabins Doha, modular buildings"
             }
@@ -462,6 +508,26 @@
 
     .swiper-slide:hover img { transform: scale(1.1); }
 
+    .gallery-swiper-mobile {
+        padding: 20px 0 50px;
+    }
+
+    .gallery-swiper-mobile .swiper-slide {
+        height: auto;
+        aspect-ratio: 3 / 4;
+        max-height: 520px;
+        border-radius: 4px;
+    }
+
+    .gallery-swiper-mobile .swiper-slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .gallery-swiper-mobile .swiper-pagination-bullet-active {
+        background: var(--primary-yellow);
+    }
 
     /* --- MOBILE RESPONSIVENESS --- */
     @@media (max-width: 991.98px) {
@@ -582,19 +648,55 @@
                 <span class="section-label">Gallery</span>
                 <h2 class="fw-black text-uppercase" style="font-size: 2.5rem; letter-spacing: -1px;">Project Showcase</h2>
             </div>
-            <div class="swiper gallery-swiper" data-aos="fade-up">
-                <div class="swiper-wrapper">
-                    @foreach (var img in product.GalleryImages)
-                    {
-                        <div class="swiper-slide">
-                            <a href="@Url.Content(img)" class="glightbox">
-                                <img src="@Url.Content(img)" alt="BestChoice Qatar Cabin">
-                            </a>
+            @if (product.GalleryImagesMobile != null && product.GalleryImagesMobile.Any())
+            {
+                <div class="gallery-swiper-desktop d-none d-lg-block" data-aos="fade-up">
+                    <div class="swiper gallery-swiper">
+                        <div class="swiper-wrapper">
+                            @foreach (var img in product.GalleryImages)
+                            {
+                                <div class="swiper-slide">
+                                    <a href="@Url.Content(img)" class="glightbox">
+                                        <img src="@Url.Content(img)" alt="BestChoice Qatar modular cabin project">
+                                    </a>
+                                </div>
+                            }
                         </div>
-                    }
+                        <div class="swiper-pagination gallery-desktop-pagination mt-4"></div>
+                    </div>
                 </div>
-                <div class="swiper-pagination mt-4"></div>
-            </div>
+                <div class="gallery-swiper-mobile-wrap d-lg-none" data-aos="fade-up">
+                    <div class="swiper gallery-swiper-mobile">
+                        <div class="swiper-wrapper">
+                            @foreach (var img in product.GalleryImagesMobile)
+                            {
+                                <div class="swiper-slide">
+                                    <a href="@Url.Content(img)" class="glightbox">
+                                        <img src="@Url.Content(img)" alt="BestChoice Qatar modular cabin project">
+                                    </a>
+                                </div>
+                            }
+                        </div>
+                        <div class="swiper-pagination gallery-mobile-pagination mt-4"></div>
+                    </div>
+                </div>
+            }
+            else
+            {
+                <div class="swiper gallery-swiper" data-aos="fade-up">
+                    <div class="swiper-wrapper">
+                        @foreach (var img in product.GalleryImages)
+                        {
+                            <div class="swiper-slide">
+                                <a href="@Url.Content(img)" class="glightbox">
+                                    <img src="@Url.Content(img)" alt="BestChoice Qatar Cabin">
+                                </a>
+                            </div>
+                        }
+                    </div>
+                    <div class="swiper-pagination mt-4"></div>
+                </div>
+            }
         </div>
     </section>
 
@@ -647,18 +749,48 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        new Swiper('.gallery-swiper', {
-            slidesPerView: 1,
-            spaceBetween: 20,
-            loop: true,
-            pagination: { el: '.swiper-pagination', clickable: true },
-            breakpoints: {
-                768: { slidesPerView: 2 },
-                1024: { slidesPerView: 3 }
-            },
-            autoplay: { delay: 3000 }
-        });
-        
+        var galleryDesktopEl = document.querySelector('.gallery-swiper-desktop .gallery-swiper');
+        if (galleryDesktopEl) {
+            new Swiper(galleryDesktopEl, {
+                slidesPerView: 1,
+                spaceBetween: 20,
+                loop: true,
+                pagination: { el: '.gallery-desktop-pagination', clickable: true },
+                breakpoints: {
+                    768: { slidesPerView: 2 },
+                    1024: { slidesPerView: 3 }
+                },
+                autoplay: { delay: 3000 }
+            });
+        }
+
+        var galleryMobileEl = document.querySelector('.gallery-swiper-mobile');
+        if (galleryMobileEl) {
+            new Swiper(galleryMobileEl, {
+                slidesPerView: 1.15,
+                centeredSlides: true,
+                spaceBetween: 16,
+                loop: true,
+                pagination: { el: '.gallery-mobile-pagination', clickable: true },
+                autoplay: { delay: 3500, disableOnInteraction: false }
+            });
+        }
+
+        var galleryDefaultEl = document.querySelector('.gallery-swiper:not(.gallery-swiper-mobile)');
+        if (galleryDefaultEl && !galleryDesktopEl) {
+            new Swiper(galleryDefaultEl, {
+                slidesPerView: 1,
+                spaceBetween: 20,
+                loop: true,
+                pagination: { el: galleryDefaultEl.querySelector('.swiper-pagination'), clickable: true },
+                breakpoints: {
+                    768: { slidesPerView: 2 },
+                    1024: { slidesPerView: 3 }
+                },
+                autoplay: { delay: 3000 }
+            });
+        }
+
         GLightbox({ selector: '.glightbox' });
     });
 </script>

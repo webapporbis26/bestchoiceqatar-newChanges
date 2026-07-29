@@ -82,6 +82,10 @@
         width: 100%;
         height: 100%;
         z-index: 1;
+        pointer-events: none;
+    }
+    .hero-swiper-premium .swiper-slide-active {
+        pointer-events: auto;
     }
     .hero-swiper-premium .swiper-slide {
         height: 100%;
@@ -139,6 +143,7 @@
 
     .swiper-slide-active .hero-content {
         z-index: 25;
+        pointer-events: auto !important;
     }
 
     .hero-swiper-premium .swiper-slide:not(.swiper-slide-active) .hero-content {
@@ -146,19 +151,27 @@
         pointer-events: none !important;
     }
 
-    .hero-content .hero-copy {
+    .hero-content .hero-copy,
+    .hero-content .hero-actions {
         pointer-events: auto !important;
     }
 
     .hero-content a.btn-bc,
     .hero-content button.btn-bc,
     .hero-content .hero-actions a,
-    .hero-content .hero-actions button {
+    .hero-content .hero-actions button,
+    .hero-content .hero-cta {
         pointer-events: auto !important;
         cursor: pointer !important;
         position: relative;
-        z-index: 50 !important;
+        z-index: 100 !important;
         touch-action: manipulation;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .hero-content .hero-cta:hover,
+    .hero-content .hero-cta:focus-visible {
+        opacity: 1 !important;
     }
 
     .hero-copy {
@@ -229,7 +242,8 @@
         justify-content: center;
         pointer-events: auto !important;
         position: relative;
-        z-index: 50;
+        z-index: 200;
+        isolation: isolate;
     }
     .hero-actions .btn-bc {
         padding: 10px 20px;
@@ -249,9 +263,14 @@
     .swiper-slide-active .hero-h1 { animation: heroFadeInUp 0.6s ease forwards 0.25s; }
     .swiper-slide-active .hero-subtext { animation: heroFadeInUp 0.6s ease forwards 0.4s; }
     .swiper-slide-active .hero-actions {
-        animation: heroFadeInUp 0.6s ease forwards 0.55s;
+        animation: heroFadeInUpBtns 0.6s ease forwards 0.55s;
         opacity: 1 !important;
         pointer-events: auto !important;
+    }
+
+    @@keyframes heroFadeInUpBtns {
+        from { transform: translateY(20px); }
+        to { transform: translateY(0); }
     }
 
     .btn-bc { padding: 14px 35px; border-radius: 0; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; transition: var(--transition-premium); display: inline-flex; align-items: center; gap: 10px; border: none; text-decoration: none; font-size: 0.85rem; }
@@ -825,7 +844,7 @@
                                         <h1 class="hero-h1">Welcome to Bestchoice - Cabins Across Qatar</h1>
                                         <p class="hero-subtext">Bestchoice was established in 2009. We have already created a name for itself in Qatar market as a GREEN company in various industrial fields.</p>
                                         <div class="hero-actions swiper-no-swiping">
-                                            <a href="/about" class="btn-bc btn-bc-yellow">
+                                            <a href="/about" class="btn-bc btn-bc-yellow hero-cta swiper-no-swiping">
                                                 READ MORE ABOUT US
                                                 <span class="material-symbols-outlined">info</span>
                                             </a>
@@ -847,11 +866,11 @@
                                         <h1 class="hero-h1">Bestchoice Services - Engineering Excellence</h1>
                                         <p class="hero-subtext">One of the fast growing companies in Qatar performing the following professional services:</p>
                                         <div class="hero-actions hero-actions--compact swiper-no-swiping">
-                                            <a href="/general-contracting" class="btn-bc btn-bc-yellow btn-bc-small">
+                                            <a href="/general-contracting" class="btn-bc btn-bc-yellow btn-bc-small hero-cta swiper-no-swiping">
                                                 General Contracting
                                                 <span class="material-symbols-outlined">architecture</span>
                                             </a>
-                                            <a href="/optical-fibre-networks" class="btn-bc btn-bc-outline btn-bc-small">
+                                            <a href="/optical-fibre-networks" class="btn-bc btn-bc-outline btn-bc-small hero-cta swiper-no-swiping">
                                                 Optical Fibre Networks
                                                 <span class="material-symbols-outlined">settings_input_component</span>
                                             </a>
@@ -873,15 +892,15 @@
                                         <h1 class="hero-h1">Premium Modular Solutions</h1>
                                         <p class="hero-subtext">Product fabrication for Qatar's major industrial sectors.</p>
                                         <div class="hero-actions hero-actions--compact swiper-no-swiping">
-                                            <a href="/portable-cabin-fabrication" class="btn-bc btn-bc-yellow btn-bc-small">
+                                            <a href="/portable-cabin-fabrication" class="btn-bc btn-bc-yellow btn-bc-small hero-cta swiper-no-swiping">
                                                 Portable Cabin Fabrication
                                                 <span class="material-symbols-outlined">precision_manufacturing</span>
                                             </a>
-                                            <a href="/building-painting-contractor" class="btn-bc btn-bc-outline btn-bc-small">
+                                            <a href="/building-painting-contractor" class="btn-bc btn-bc-outline btn-bc-small hero-cta swiper-no-swiping">
                                                 Building Painting
                                                 <span class="material-symbols-outlined">format_paint</span>
                                             </a>
-                                            <a href="/steel-aluminum-fabrication" class="btn-bc btn-bc-outline btn-bc-small">
+                                            <a href="/steel-aluminum-fabrication" class="btn-bc btn-bc-outline btn-bc-small hero-cta swiper-no-swiping">
                                                 Steel & Aluminum
                                                 <span class="material-symbols-outlined">hardware</span>
                                             </a>
@@ -903,11 +922,11 @@
                                         <h1 class="hero-h1">Leading Portable Cabin Manufacturer in Qatar</h1>
                                         <p class="hero-subtext">Top-quality, durable, and customizable portable cabins built to exceed industrial expectations and site requirements.</p>
                                         <div class="hero-actions swiper-no-swiping">
-                                            <button type="button" class="btn-bc btn-bc-yellow" data-bs-toggle="modal" data-bs-target="#quoteModal">
+                                            <button type="button" class="btn-bc btn-bc-yellow hero-cta swiper-no-swiping" data-bs-toggle="modal" data-bs-target="#quoteModal">
                                                 GET FREE QUOTE
                                                 <span class="material-symbols-outlined">description</span>
                                             </button>
-                                            <a href="tel:@settings.Mobile1" class="btn-bc btn-bc-outline">
+                                            <a href="tel:@settings.Mobile1" class="btn-bc btn-bc-outline hero-cta swiper-no-swiping">
                                                 CALL OUR TEAM
                                                 <span class="material-symbols-outlined">call</span>
                                             </a>
@@ -929,7 +948,7 @@
                                         <h1 class="hero-h1">Modular Innovation - Bestchoice Qatar</h1>
                                         <p class="hero-subtext">Get porta cabins that are fast to install, built to last, and budget-friendly - engineered exclusively for BestChoice Qatar.</p>
                                         <div class="hero-actions swiper-no-swiping">
-                                            <a href="/portable-cabin-fabrication" class="btn-bc btn-bc-yellow">
+                                            <a href="/portable-cabin-fabrication" class="btn-bc btn-bc-yellow hero-cta swiper-no-swiping">
                                                 EXPLORE SOLUTIONS
                                                 <span class="material-symbols-outlined">bolt</span>
                                             </a>
@@ -1055,7 +1074,7 @@
                 <div class="col-lg-7" data-aos="fade-left">
                     <div class="promo-image-container" style="position: relative; padding: 10px;">
                         <div class="promo-image-wrap shadow-2xl rounded-4 overflow-hidden bg-white position-relative" style="z-index: 1; transition: transform 0.5s ease;">
-                            <img src="~/Uploads/Products/container-office-flyer.jpeg" class="img-fluid" alt="Premium Container Office Qatar" style="width: 100%; height: auto; display: block;">
+                            <img src="~/Content/assets/img/slide/hero-slide-4.jpeg" class="img-fluid" alt="Premium Container Office Qatar" style="width: 100%; height: auto; display: block;">
                         </div>
                         
                         <!-- Floating Badge -->
@@ -1797,10 +1816,7 @@
         </div>
     </div>
 
-    <!-- Swiper JS CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-    <!-- Swiper Initialization -->
+    <!-- Swiper Initialization (uses bundle from _Layout) -->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             // Header scroll — solid bar (no overlap with hero image)
@@ -1816,15 +1832,104 @@
                 });
             }
 
+            function updateHeroSlideClickability(swiper) {
+                const root = swiper.el;
+                if (!root) return;
+                root.querySelectorAll('.swiper-slide').forEach(function (slide) {
+                    const isActive = slide.classList.contains('swiper-slide-active');
+                    slide.style.pointerEvents = isActive ? 'auto' : 'none';
+                    slide.style.zIndex = isActive ? '5' : '0';
+                    const content = slide.querySelector('.hero-content');
+                    if (content) {
+                        content.style.visibility = isActive ? 'visible' : 'hidden';
+                        content.style.pointerEvents = isActive ? 'auto' : 'none';
+                    }
+                });
+            }
+
+            function bindHeroCtaClicks(swiper) {
+                const hero = document.getElementById('hero');
+                if (!hero || hero.dataset.heroCtaBound === '1') return;
+                hero.dataset.heroCtaBound = '1';
+
+                function getActiveSlideEl() {
+                    if (swiper && swiper.slides && swiper.activeIndex != null) {
+                        return swiper.slides[swiper.activeIndex] || null;
+                    }
+                    return hero.querySelector('.swiper-slide-active');
+                }
+
+                function resolveHeroCta(clientX, clientY) {
+                    const activeSlide = getActiveSlideEl();
+                    const stack = document.elementsFromPoint(clientX, clientY);
+                    for (let i = 0; i < stack.length; i++) {
+                        const cta = stack[i].closest && stack[i].closest('a.hero-cta, button.hero-cta');
+                        if (!cta || !hero.contains(cta)) continue;
+                        if (activeSlide && !activeSlide.contains(cta)) continue;
+                        const style = window.getComputedStyle(cta);
+                        if (style.visibility === 'hidden' || style.pointerEvents === 'none') continue;
+                        if (parseFloat(style.opacity) < 0.05) continue;
+                        return cta;
+                    }
+                    return null;
+                }
+
+                function activateHeroCta(cta) {
+                    const link = cta.tagName === 'A' ? cta : cta.closest('a[href]');
+                    if (link) {
+                        const href = (link.getAttribute('href') || '').trim();
+                        if (href && href !== '#') {
+                            if (link.target === '_blank') {
+                                window.open(link.href, '_blank', 'noopener');
+                            } else {
+                                window.location.href = link.href;
+                            }
+                        }
+                        return;
+                    }
+
+                    const modalBtn = cta.closest('button[data-bs-target]') || (cta.tagName === 'BUTTON' ? cta : null);
+                    if (modalBtn && typeof bootstrap !== 'undefined') {
+                        const targetSel = modalBtn.getAttribute('data-bs-target');
+                        const modalEl = targetSel ? document.querySelector(targetSel) : null;
+                        if (modalEl) {
+                            bootstrap.Modal.getOrCreateInstance(modalEl).show();
+                        }
+                    }
+                }
+
+                function onHeroPointer(e) {
+                    const cta = resolveHeroCta(e.clientX, e.clientY);
+                    if (!cta) return;
+                    e.preventDefault();
+                    e.stopImmediatePropagation();
+                    activateHeroCta(cta);
+                }
+
+                hero.addEventListener('click', onHeroPointer, true);
+                hero.addEventListener('touchend', function (e) {
+                    if (e.changedTouches.length !== 1) return;
+                    const t = e.changedTouches[0];
+                    const cta = resolveHeroCta(t.clientX, t.clientY);
+                    if (!cta) return;
+                    e.preventDefault();
+                    activateHeroCta(cta);
+                }, { passive: false, capture: true });
+            }
+
             // Hero Swiper with Safety Block
+            let heroSwiper = null;
             try {
-                const heroSwiper = new Swiper('.hero-swiper-premium', {
+                heroSwiper = new Swiper('.hero-swiper-premium', {
                     effect: 'fade',
                     fadeEffect: { crossFade: true },
                     speed: 1500,
                     loop: true,
+                    allowTouchMove: false,
                     preventClicks: false,
                     preventClicksPropagation: false,
+                    preventInteractionOnTransition: false,
+                    noSwiping: true,
                     noSwipingClass: 'swiper-no-swiping',
                     touchStartPreventDefault: false,
                     autoplay: {
@@ -1836,34 +1941,30 @@
                         clickable: true,
                     },
                     on: {
-                        init: function () { updateHeroSlideClickability(this); },
-                        slideChangeTransitionEnd: function () { updateHeroSlideClickability(this); }
+                        init: function () {
+                            updateHeroSlideClickability(this);
+                        },
+                        slideChangeTransitionEnd: function () {
+                            updateHeroSlideClickability(this);
+                        }
                     }
                 });
-
-                function updateHeroSlideClickability(swiper) {
-                    const root = swiper.el;
-                    if (!root) return;
-                    root.querySelectorAll('.swiper-slide').forEach(function (slide) {
-                        const isActive = slide.classList.contains('swiper-slide-active');
-                        slide.style.pointerEvents = isActive ? 'auto' : 'none';
-                        slide.style.zIndex = isActive ? '5' : '0';
-                        const content = slide.querySelector('.hero-content');
-                        if (content) {
-                            content.style.visibility = isActive ? 'visible' : 'hidden';
-                            content.style.pointerEvents = isActive ? 'auto' : 'none';
-                        }
-                    });
-                }
 
                 // Initialize PureCounter (Self-starting library) 
                 new PureCounter();
                 console.log("Hero Swiper & PureCounter Initialized Successfully");
             } catch (e) {
                 console.error("Hero Swiper Initialization Failed:", e);
-                // Fallback: ensure first slide is visible
                 const firstSlide = document.querySelector('.hero-swiper-premium .swiper-slide:first-child');
-                if(firstSlide) firstSlide.style.opacity = '1';
+                if (firstSlide) {
+                    firstSlide.style.opacity = '1';
+                    firstSlide.classList.add('swiper-slide-active');
+                }
+            }
+
+            const heroEl = document.getElementById('hero');
+            if (heroEl && !heroEl.dataset.heroCtaBound) {
+                bindHeroCtaClicks(heroSwiper);
             }
 
 

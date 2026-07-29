@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -119,7 +118,6 @@
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
   </ItemGroup>
-
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -174,6 +172,7 @@
     <Compile Include="Models\Gallery.cs">
       <DependentUpon>BestChoiceQatar.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ServiceModel.cs" />
     <Compile Include="Models\Setting.cs">
       <DependentUpon>BestChoiceQatar.tt</DependentUpon>
     </Compile>
@@ -323,6 +322,9 @@
     <Content Include="Content\assets\img\Products\cabin\cabin-7.jpg" />
     <Content Include="Content\assets\img\Products\cabin\cabin-8.jpg" />
     <Content Include="Content\assets\img\Products\cabin\cabin-9.jpg" />
+    <Content Include="Content\assets\img\Products\cabin\container-office-hero.png" />
+    <Content Include="Content\assets\img\Products\cabin\labor-camp-hero.png" />
+    <Content Include="Content\assets\img\Products\cabin\multi-story-hero.png" />
     <Content Include="Content\assets\img\Products\designing.jpg" />
     <Content Include="Content\assets\img\Products\design\design-1.jpg" />
     <Content Include="Content\assets\img\Products\design\design-2.jpg" />
@@ -543,7 +545,87 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Uploads\0da5b1d6-92c2-4e1c-93c9-bbc8d99a26c6.jpg" />
+    <Content Include="Uploads\14158d65-324e-4654-a778-4d14502b2d79.png" />
+    <Content Include="Uploads\7c45ccbd-50f2-461c-9731-2ee781784fae.png" />
     <Content Include="Uploads\adbe5e6c-c803-4761-b920-c425a4489ad5.jpg" />
+    <Content Include="Uploads\client-1.png" />
+    <Content Include="Uploads\client-10.png" />
+    <Content Include="Uploads\client-11.png" />
+    <Content Include="Uploads\client-12.png" />
+    <Content Include="Uploads\client-2.png" />
+    <Content Include="Uploads\client-3.png" />
+    <Content Include="Uploads\client-4.png" />
+    <Content Include="Uploads\client-5.png" />
+    <Content Include="Uploads\client-6.png" />
+    <Content Include="Uploads\client-7.png" />
+    <Content Include="Uploads\client-8.png" />
+    <Content Include="Uploads\client-9.png" />
+    <Content Include="Uploads\Container\01 %281%29.jpeg" />
+    <Content Include="Uploads\Container\01 %281%29.jpg" />
+    <Content Include="Uploads\Container\01 %282%29.jpg" />
+    <Content Include="Uploads\Container\01 %283%29.jpg" />
+    <Content Include="Uploads\img1.jpg" />
+    <Content Include="Uploads\img2.jpg" />
+    <Content Include="Uploads\img3.jpg" />
+    <Content Include="Uploads\img4.jpg" />
+    <Content Include="Uploads\img5.jpg" />
+    <Content Include="Uploads\Pre Fab\desktop\04 %281%29.jpeg" />
+    <Content Include="Uploads\Pre Fab\desktop\04 %281%29.jpg" />
+    <Content Include="Uploads\Pre Fab\desktop\04 %2810%29.jpeg" />
+    <Content Include="Uploads\Pre Fab\desktop\04 %2811%29.jpeg" />
+    <Content Include="Uploads\Pre Fab\desktop\04 %2812%29.jpeg" />
+    <Content Include="Uploads\Pre Fab\desktop\04 %2813%29.jpeg" />
+    <Content Include="Uploads\Pre Fab\desktop\04 %282%29.jpeg" />
+    <Content Include="Uploads\Pre Fab\desktop\04 %282%29.jpg" />
+    <Content Include="Uploads\Pre Fab\desktop\04 %283%29.jpeg" />
+    <Content Include="Uploads\Pre Fab\desktop\04 %284%29.jpg" />
+    <Content Include="Uploads\Pre Fab\desktop\04 %285%29.jpg" />
+    <Content Include="Uploads\Pre Fab\desktop\04 %286%29.jpg" />
+    <Content Include="Uploads\Pre Fab\desktop\04 %287%29.jpeg" />
+    <Content Include="Uploads\Pre Fab\desktop\04 %287%29.jpg" />
+    <Content Include="Uploads\Pre Fab\desktop\04 %288%29.jpeg" />
+    <Content Include="Uploads\Pre Fab\desktop\04 %288%29.jpg" />
+    <Content Include="Uploads\Pre Fab\desktop\04 %289%29.jpeg" />
+    <Content Include="Uploads\Pre Fab\mobile\04 %283%29.jpg" />
+    <Content Include="Uploads\Pre Fab\mobile\04 %284%29.jpeg" />
+    <Content Include="Uploads\Pre Fab\mobile\04 %285%29.jpeg" />
+    <Content Include="Uploads\Pre Fab\mobile\04 %286%29.jpeg" />
+    <Content Include="Uploads\Products\cabin fabrication.jpg" />
+    <Content Include="Uploads\Products\cabin-1.jpg" />
+    <Content Include="Uploads\Products\cabin-2.jpg" />
+    <Content Include="Uploads\Products\ClientFile_69a6a388-d462-41bf-8ee5-f07b5931ffe5.JPG" />
+    <Content Include="Uploads\Products\ClientFile_860b0857-31cf-42b9-ac6f-99f82463c317.JPG" />
+    <Content Include="Uploads\Products\ClientFile_8bd7813d-9b36-40e0-a639-3baa1d9a3cda.jpg" />
+    <Content Include="Uploads\Products\ClientFile_9377cfd6-6ec5-451c-a700-acb3b712c415.jpg" />
+    <Content Include="Uploads\Products\ClientFile_afc5ce8d-6e7e-42ce-8f3f-ceb7c2626a01.jpg" />
+    <Content Include="Uploads\Products\ClientFile_e00548cb-eb96-484d-bed0-527356266e07.jpg" />
+    <Content Include="Uploads\Products\ClientFile_fa5729e2-292e-406c-9dce-bd28cc8b8e18.jpg" />
+    <Content Include="Uploads\Products\container-office-flyer.jpeg" />
+    <Content Include="Uploads\Products\copper-networks1.jpg" />
+    <Content Include="Uploads\Products\ELV-security-systems-in-qatar.jpg" />
+    <Content Include="Uploads\Products\Fabrication-1.jpg" />
+    <Content Include="Uploads\Products\Fabrication-2.jpg" />
+    <Content Include="Uploads\Products\fiber-optic-cable.jpg" />
+    <Content Include="Uploads\Products\General Contracting-1.jpg" />
+    <Content Include="Uploads\Products\General Contracting-2.jpg" />
+    <Content Include="Uploads\Products\General Contracting-3.jpg" />
+    <Content Include="Uploads\Products\General Contracting-4.jpg" />
+    <Content Include="Uploads\Products\General Contracting-5.JPG" />
+    <Content Include="Uploads\Products\General Contracting-6.JPG" />
+    <Content Include="Uploads\Products\General Contracting.png" />
+    <Content Include="Uploads\Products\Internet-Service-Provider-ISP.jpg" />
+    <Content Include="Uploads\Products\modular-hero-hd.png" />
+    <Content Include="Uploads\Products\opticalfibre.jpg" />
+    <Content Include="Uploads\Products\OSP-fiber-services-page.jpg" />
+    <Content Include="Uploads\Products\painting.jpg" />
+    <Content Include="Uploads\Products\Steel &amp; Aluminum Fabrication.jpg" />
+    <Content Include="Uploads\Products\telecom.jpg" />
+    <Content Include="Uploads\service_1.svg" />
+    <Content Include="Uploads\service_4.svg" />
+    <Content Include="Uploads\service_6.svg" />
+    <Content Include="Uploads\service_7.svg" />
+    <Content Include="Uploads\service_8.svg" />
+    <Content Include="Uploads\service_9.svg" />
     <Content Include="Uploads\slide-1.jpg" />
     <Content Include="Uploads\slide-2.jpg" />
     <Content Include="Uploads\slide-3.jpg" />
@@ -552,6 +634,43 @@
     <Content Include="Uploads\portfolio-mobile\portfolio-mobile-3.png" />
     <Content Include="Uploads\portfolio-mobile\portfolio-mobile-4.png" />
     <Content Include="Uploads\portfolio-mobile\portfolio-mobile-5.png" />
+    <Content Include="Uploads\Modular\desktop\03 (1).jpg" />
+    <Content Include="Uploads\Modular\desktop\03 (2).jpg" />
+    <Content Include="Uploads\Modular\desktop\03 (3).jpg" />
+    <Content Include="Uploads\Modular\desktop\03 (3).jpeg" />
+    <Content Include="Uploads\Modular\desktop\03 (4).jpg" />
+    <Content Include="Uploads\Modular\desktop\03 (5).jpg" />
+    <Content Include="Uploads\Modular\desktop\03 (6).jpg" />
+    <Content Include="Uploads\Modular\desktop\03 (7).jpeg" />
+    <Content Include="Uploads\Modular\desktop\03 (8).jpeg" />
+    <Content Include="Uploads\Modular\mobile\03 (1).jpeg" />
+    <Content Include="Uploads\Modular\mobile\03 (2).jpeg" />
+    <Content Include="Uploads\Modular\mobile\03 (4).jpeg" />
+    <Content Include="Uploads\Modular\mobile\03 (5).jpeg" />
+    <Content Include="Uploads\Modular\mobile\03 (6).jpeg" />
+    <Content Include="Uploads\Toilet\desktop\06 (1).jpg" />
+    <Content Include="Uploads\Toilet\desktop\06 (5).jpeg" />
+    <Content Include="Uploads\Toilet\desktop\06 (6).jpeg" />
+    <Content Include="Uploads\Toilet\desktop\06 (10).jpeg" />
+    <Content Include="Uploads\Toilet\desktop\06 (11).jpeg" />
+    <Content Include="Uploads\Toilet\desktop\06 (12).jpeg" />
+    <Content Include="Uploads\Toilet\mobile\06 (1).jpeg" />
+    <Content Include="Uploads\Toilet\mobile\06 (2).jpeg" />
+    <Content Include="Uploads\Toilet\mobile\06 (3).jpeg" />
+    <Content Include="Uploads\Toilet\mobile\06 (4).jpeg" />
+    <Content Include="Uploads\Toilet\mobile\06 (7).jpeg" />
+    <Content Include="Uploads\Toilet\mobile\06 (8).jpeg" />
+    <Content Include="Uploads\Toilet\mobile\06 (9).jpeg" />
+    <Content Include="Uploads\Toilet\mobile\06 (13).jpeg" />
+    <Content Include="Uploads\Toilet\mobile\06 (14).jpeg" />
+    <Content Include="Uploads\Security Cabin\desktop\05 (1).jpg" />
+    <Content Include="Uploads\Security Cabin\desktop\05 (3).jpg" />
+    <Content Include="Uploads\Security Cabin\desktop\05 (6).jpg" />
+    <Content Include="Uploads\Security Cabin\mobile\05 (1).jpeg" />
+    <Content Include="Uploads\Security Cabin\mobile\05 (2).jpg" />
+    <Content Include="Uploads\Security Cabin\mobile\05 (4).jpg" />
+    <Content Include="Uploads\Security Cabin\mobile\05 (5).jpg" />
+    <Content Include="Views\Home\index.html" />
     <Content Include="Views\Home\Template.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -580,13 +699,25 @@
     <Content Include="Views\Home\portable-cabin-manufacturers-in-qatar.cshtml" />
     <Content Include="Views\Home\site-cabins-offices-welfare-accommodation.cshtml" />
     <Content Include="Views\Home\optical-fibre-networks.cshtml" />
+    <Content Include="Views\Home\toilet-sanitary-cabins.cshtml" />
+    <Content Include="Views\Home\ProductDetails.cshtml" />
+    <Content Include="Views\Home\security-guard-cabins.cshtml" />
+    <Content Include="Views\Home\single-double-story-cabins.cshtml" />
+    <Content Include="Views\Home\portable-office-cabins.cshtml" />
+    <Content Include="Views\Home\portable-site-cabins.cshtml" />
+    <Content Include="Views\Home\portable-toilets.cshtml" />
+    <Content Include="Views\Home\previous-projects.cshtml" />
+    <Content Include="Views\Home\labor-camps-accommodation.cshtml" />
+    <Content Include="Views\Home\FAQ.cshtml" />
+    <Content Include="Views\Home\Gallery.cshtml" />
+    <Content Include="Views\Home\container-office-cabins.cshtml" />
+    <Content Include="Views\Shared\_Loader.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Backend\Views\BackendBase\" />
     <Folder Include="Areas\Backend\Views\Base\" />
     <Folder Include="Content\assets\img\Products\ELV Solutions\" />
-    <Folder Include="Uploads\Products\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -632,7 +763,6 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
-
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
