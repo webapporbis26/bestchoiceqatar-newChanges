@@ -667,6 +667,7 @@ body.lock-scroll {
 
 .navbar-overlay.active {
   display: block !important;
+  pointer-events: auto !important;
 }
 
 /* 🚨 FLOATING ELEMENT LOCKDOWN v10.0 */
@@ -2355,11 +2356,13 @@ section {
     visibility: hidden;
     opacity: 0;
     transition: 0.4s ease;
+    pointer-events: none; /* Prevent blocking interactions when closed */
 }
 
 .deskHamburgerOverlay.open {
     visibility: visible;
     opacity: 1;
+    pointer-events: auto; /* Allow interactions when open */
 }
 
 .deskHamburgerPopup {
@@ -2579,11 +2582,13 @@ section {
     visibility: hidden;
     opacity: 0;
     transition: opacity 0.4s ease, visibility 0.4s ease;
+    pointer-events: none; /* Prevent blocking interactions when closed */
 }
 
 .services-drawer-overlay.active {
     visibility: visible;
     opacity: 1;
+    pointer-events: auto; /* Allow interactions when open */
 }
 
 /* Drawer Panel */
@@ -2857,4 +2862,19 @@ section {
     pointer-events: none !important;
     -ms-touch-action: auto !important;
     touch-action: auto !important;
+}
+
+/* ==========================================
+   SCROLL SAFEGUARD SYSTEM
+   Forces normal scrolling behavior on html and body
+   whenever scroll lock classes are not active.
+   ========================================== */
+html:not(.lock-scroll):not(.glightbox-open) {
+    overflow-y: auto !important;
+    height: auto !important;
+}
+body:not(.lock-scroll):not(.glightbox-open) {
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    height: auto !important;
 }
