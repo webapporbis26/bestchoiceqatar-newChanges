@@ -39,7 +39,7 @@
 
     <div class="navbar navbar-inverse navbar-color">
         <div class="navbar-header">
-            <a class="navbar-brand" href="/backend/default/dashboard"><img src="~/Content/assets/img/logo/animation.gif" alt="RoyalEngineers" width="1800" height="531" fetchpriority="high"></a>
+            <a class="navbar-brand" href="/backend/default/dashboard"><img src="~/Content/assets/img/logo/animation.gif" alt="RoyalEngineers"></a>
             <ul class="nav navbar-nav pull-right visible-xs-block">
                 <li><a data-toggle="collapse" data-target="#menu-type-2" style="background-color:black;" class="second-menu-trigger"><i class="icon-tree5"></i></a></li>
                 <li><a data-toggle="collapse" data-target="#navbar-mobile" style="background-color:black;"><i class="icon-paragraph-justify3"></i></a></li>
@@ -62,16 +62,16 @@
 
                                     if (!_file.Exists)
                                     {
-                                        <img src="/areas/backend/assets/images/avatar2.webp" class="img-circle" alt="" width="148" height="132" loading="lazy">
+                                        <img src="/areas/backend/assets/images/avatar2.jpg" class="img-circle" alt="">
                                     }
                                     else
                                     {
-                                        <img src="~/Images/users/@(user.Photo)" class="img-circle" alt="" loading="lazy">
+                                        <img src="~/Images/users/@(user.Photo)" class="img-circle" alt="">
                                     }
                                 }
                                 else
                                 {
-                                    <img src="~/areas/backend/assets/images/avatar2.webp" class="img-circle" alt="" width="148" height="132" loading="lazy">
+                                    <img src="~/areas/backend/assets/images/avatar2.jpg" class="img-circle" alt="">
                                 }
 
                                 @(user.Name)

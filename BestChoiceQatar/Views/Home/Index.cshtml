@@ -44,7 +44,7 @@
     }
 
     body { font-family: var(--font-body); background-color: var(--white-bc); color: #333; overflow-x: hidden; width: 100%; position: relative; }
-    html { width: 100%; scroll-behavior: auto !important; }
+    html { overflow-x: hidden; width: 100%; }
     
     /* Global Image Safety */
     img:not(.hero-bg) { max-width: 100% !important; height: auto !important; }
@@ -154,7 +154,6 @@
     .swiper-slide-active .hero-content {
         z-index: 25;
         pointer-events: auto !important;
-    }
     .hero-copy {
         max-width: 800px;
         padding: 0;
@@ -830,7 +829,7 @@
                 <div class="swiper-wrapper">
                     <!-- Slide 1: Welcome -->
                     <div class="swiper-slide">
-                        <img src="/Content/assets/img/slide/hero-slide-1.webp" class="hero-bg" alt="Bestchoice Qatar Engineering" width="1500" height="1000" fetchpriority="high">
+                        <img src="/Content/assets/img/slide/hero-slide-1.jpeg" class="hero-bg" alt="Bestchoice Qatar Engineering">
                         <div class="hero-content swiper-no-swiping">
                             <div class="container">
                                 <div class="row justify-content-center">
@@ -852,7 +851,7 @@
 
                     <!-- Slide 2: Services -->
                     <div class="swiper-slide theme-lime">
-                        <img src="/Content/assets/img/slide/hero-slide-2.webp" class="hero-bg" alt="Bestchoice Qatar Services" width="1500" height="1000" fetchpriority="high">
+                        <img src="/Content/assets/img/slide/hero-slide-2.jpeg" class="hero-bg" alt="Bestchoice Qatar Services">
                         <div class="hero-content swiper-no-swiping">
                             <div class="container">
                                 <div class="row justify-content-center">
@@ -878,7 +877,7 @@
 
                     <!-- Slide 3: Products -->
                     <div class="swiper-slide theme-lime">
-                        <img src="/Content/assets/img/slide/hero-slide-3.webp" class="hero-bg" alt="Bestchoice Qatar Products" width="1500" height="1000" fetchpriority="high">
+                        <img src="/Content/assets/img/slide/hero-slide-3.jpeg" class="hero-bg" alt="Bestchoice Qatar Products">
                         <div class="hero-content swiper-no-swiping">
                             <div class="container">
                                 <div class="row justify-content-center">
@@ -908,7 +907,7 @@
 
                     <!-- Slide 4: Manufacturer -->
                     <div class="swiper-slide">
-                        <img src="/Content/assets/img/slide/hero-slide-4.webp" class="hero-bg" alt="Bestchoice Qatar Manufacturing" width="1500" height="1000" fetchpriority="high">
+                        <img src="/Content/assets/img/slide/hero-slide-4.jpeg" class="hero-bg" alt="Bestchoice Qatar Manufacturing">
                         <div class="hero-content swiper-no-swiping">
                             <div class="container">
                                 <div class="row justify-content-center">
@@ -934,7 +933,7 @@
 
                     <!-- Slide 5: Quick Setup -->
                     <div class="swiper-slide">
-                        <img src="/Content/assets/img/slide/hero-slide-5.webp" class="hero-bg" alt="Bestchoice Qatar Solutions" width="1500" height="1000" fetchpriority="high">
+                        <img src="/Content/assets/img/slide/hero-slide-5.jpeg" class="hero-bg" alt="Bestchoice Qatar Solutions">
                         <div class="hero-content swiper-no-swiping">
                             <div class="container">
                                 <div class="row justify-content-center">
@@ -967,8 +966,8 @@
                 <!-- Left: Stacked Images with Badges -->
                 <div class="col-lg-5" data-aos="fade-right">
                     <div class="about-img-stack" style="min-height:480px;">
-                        <img src="~/Uploads/slide-1.webp" class="about-img-top shadow" alt="Bestchoice Porta Cabin Qatar Interior" width="1920" height="1080" fetchpriority="high">
-                        <img src="~/Uploads/slide-2.webp" class="about-img-bottom shadow" alt="Bestchoice Qatar Modular Construction" width="1920" height="1080" loading="lazy">
+                        <img src="~/Uploads/slide-1.jpg" class="about-img-top shadow" alt="Bestchoice Porta Cabin Qatar Interior">
+                        <img src="~/Uploads/slide-2.jpg" class="about-img-bottom shadow" alt="Bestchoice Qatar Modular Construction">
                         <!-- Years Badge -->
                         <div class="about-badge about-badge-years">
                             <span class="badge-num purecounter" data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1.5">0</span><span class="badge-num">+</span>
@@ -1078,7 +1077,7 @@
                 <div class="col-lg-7" data-aos="fade-left">
                     <div class="promo-image-container" style="position: relative; padding: 10px;">
                         <div class="promo-image-wrap shadow-2xl rounded-4 overflow-hidden bg-white position-relative" style="z-index: 1; transition: transform 0.5s ease;">
-                            <img src="~/Uploads/Products/container-office-flyer.webp" class="img-fluid" alt="Premium Container Office Qatar" style="width: 100%; height: auto; display: block;" loading="lazy">
+                            <img src="~/Uploads/Products/container-office-flyer.jpeg" class="img-fluid" alt="Premium Container Office Qatar" style="width: 100%; height: auto; display: block;">
                         </div>
                         
                         <!-- Floating Badge -->
@@ -1288,7 +1287,7 @@
                     <div class="swiper-slide">
                         <div class="premium-card">
                             <div class="card-img-wrap">
-                                <img src="~/Uploads/Products/cabin-1.webp" alt="Porta Cabin Offices Qatar" width="850" height="600" loading="lazy">
+                                <img src="~/Uploads/Products/cabin-1.jpg" alt="Porta Cabin Offices Qatar">
                                 <div class="card-overlay">
                                     <h3 class="card-title">Porta Cabin Offices</h3>
                                     <a href="/site-cabins-offices-welfare-accommodation" class="card-link">Explore More <span class="material-symbols-outlined">north_east</span></a>
@@ -1301,7 +1300,7 @@
                     <div class="swiper-slide">
                         <div class="premium-card">
                             <div class="card-img-wrap">
-                                <img src="~/Uploads/Products/cabin-2.webp" alt="Single & Double Story Porta Cabins" width="850" height="600" loading="lazy">
+                                <img src="~/Uploads/Products/cabin-2.jpg" alt="Single & Double Story Porta Cabins">
                                 <div class="card-overlay">
                                     <h3 class="card-title">Single &amp; Double Story</h3>
                                     <a href="/product/single-double-story-cabins" class="card-link">Explore More <span class="material-symbols-outlined">north_east</span></a>
@@ -1314,7 +1313,7 @@
                     <div class="swiper-slide">
                         <div class="premium-card">
                             <div class="card-img-wrap">
-                                <img src="~/Uploads/Products/cabin fabrication.webp" alt="Labor Camps Accommodation Qatar" width="830" height="528" loading="lazy">
+                                <img src="~/Uploads/Products/cabin fabrication.jpg" alt="Labor Camps Accommodation Qatar">
                                 <div class="card-overlay">
                                     <h3 class="card-title">Labor &amp; Welfare Camps</h3>
                                     <a href="/product/labor-camps-accommodation" class="card-link">Explore More <span class="material-symbols-outlined">north_east</span></a>
@@ -1327,7 +1326,7 @@
                     <div class="swiper-slide">
                         <div class="premium-card">
                             <div class="card-img-wrap">
-                                <img src="~/Uploads/Products/Fabrication-1.webp" alt="Security Guard Cabins Qatar" width="850" height="600" loading="lazy">
+                                <img src="~/Uploads/Products/Fabrication-1.jpg" alt="Security Guard Cabins Qatar">
                                 <div class="card-overlay">
                                     <h3 class="card-title">Security &amp; Guard Cabins</h3>
                                     <a href="/product/security-guard-cabins" class="card-link">Explore More <span class="material-symbols-outlined">north_east</span></a>
@@ -1340,7 +1339,7 @@
                     <div class="swiper-slide">
                         <div class="premium-card">
                             <div class="card-img-wrap">
-                                <img src="~/Uploads/Products/Fabrication-2.webp" alt="Toilet Sanitary Cabins Qatar" width="850" height="600" loading="lazy">
+                                <img src="~/Uploads/Products/Fabrication-2.jpg" alt="Toilet Sanitary Cabins Qatar">
                                 <div class="card-overlay">
                                     <h3 class="card-title">Toilet &amp; Sanitary Units</h3>
                                     <a href="/product/toilet-sanitary-cabins" class="card-link">Explore More <span class="material-symbols-outlined">north_east</span></a>
@@ -1353,7 +1352,7 @@
                     <div class="swiper-slide">
                         <div class="premium-card">
                             <div class="card-img-wrap">
-                                <img src="~/Uploads/Products/container-office-flyer.webp" alt="Container Office Cabins Qatar" width="1600" height="1600" loading="lazy">
+                                <img src="~/Uploads/Products/container-office-flyer.jpeg" alt="Container Office Cabins Qatar">
                                 <div class="card-overlay">
                                     <h3 class="card-title">Container Office Cabins</h3>
                                     <a href="/product/container-office-cabins" class="card-link">Explore More <span class="material-symbols-outlined">north_east</span></a>
@@ -1383,7 +1382,7 @@
     <!-- MID-PAGE CTA: INTERESTED TO WORK WITH US -->
     <section class="p-0">
         <div class="work-banner">
-            <img src="~/Uploads/slide-3.webp" class="work-banner-bg" alt="Bestchoice Qatar Project" width="1920" height="1080" fetchpriority="high">
+            <img src="~/Uploads/slide-3.jpg" class="work-banner-bg" alt="Bestchoice Qatar Project">
             <div class="work-banner-content" data-aos="zoom-in">
                 <h2>Interested To Work With Us?</h2>
                 <a href="/contact" class="btn-bc-work">Get A Quotation</a>
@@ -1395,25 +1394,25 @@
     <section id="modular-works" class="py-5 bg-white">
         @{
             var portfolioMobileItems = new[] {
-                new { Src = "~/Uploads/portfolio-mobile/portfolio-mobile-1.webp", Title = "Security Guard Cabin", Alt = "Premium security guard cabin Qatar" },
-                new { Src = "~/Uploads/portfolio-mobile/portfolio-mobile-2.webp", Title = "Container Office", Alt = "Modular container office waterfront Qatar" },
-                new { Src = "~/Uploads/portfolio-mobile/portfolio-mobile-3.webp", Title = "Crane Installation", Alt = "Modular unit crane installation Qatar" },
-                new { Src = "~/Uploads/portfolio-mobile/portfolio-mobile-4.webp", Title = "Site Cabin Project", Alt = "Portable site cabin construction Qatar" },
-                new { Src = "~/Uploads/portfolio-mobile/portfolio-mobile-5.webp", Title = "Fleet Delivery", Alt = "Modular cabin fleet logistics Qatar" }
+                new { Src = "~/Uploads/portfolio-mobile/portfolio-mobile-1.png", Title = "Security Guard Cabin", Alt = "Premium security guard cabin Qatar" },
+                new { Src = "~/Uploads/portfolio-mobile/portfolio-mobile-2.png", Title = "Container Office", Alt = "Modular container office waterfront Qatar" },
+                new { Src = "~/Uploads/portfolio-mobile/portfolio-mobile-3.png", Title = "Crane Installation", Alt = "Modular unit crane installation Qatar" },
+                new { Src = "~/Uploads/portfolio-mobile/portfolio-mobile-4.png", Title = "Site Cabin Project", Alt = "Portable site cabin construction Qatar" },
+                new { Src = "~/Uploads/portfolio-mobile/portfolio-mobile-5.png", Title = "Fleet Delivery", Alt = "Modular cabin fleet logistics Qatar" }
             };
             var portfolioItems = new[] {
-                new { Src = "~/Uploads/WhatsApp Image 2026-04-22 at 3.41.42 PM (1).webp", Title = "Site Installation", Alt = "Site Project 1" },
-                new { Src = "~/Uploads/WhatsApp Image 2026-04-22 at 3.41.42 PM.webp", Title = "Modular Unit", Alt = "Site Project 2" },
-                new { Src = "~/Uploads/WhatsApp Image 2026-04-22 at 3.41.43 PM (1).webp", Title = "Custom Fabrication", Alt = "Site Project 3" },
-                new { Src = "~/Uploads/WhatsApp Image 2026-04-22 at 3.41.43 PM (2).webp", Title = "Office Complex", Alt = "Site Project 4" },
-                new { Src = "~/Uploads/WhatsApp Image 2026-04-22 at 3.41.43 PM (3).webp", Title = "Project Site", Alt = "Site Project 5" },
-                new { Src = "~/Uploads/WhatsApp Image 2026-04-22 at 3.41.43 PM.webp", Title = "Cabin Interior", Alt = "Site Project 6" },
-                new { Src = "~/Uploads/WhatsApp Image 2026-04-22 at 3.41.44 PM (1).webp", Title = "Industrial Unit", Alt = "Site Project 7" },
-                new { Src = "~/Uploads/WhatsApp Image 2026-04-22 at 3.41.44 PM (2).webp", Title = "Doha Site Setup", Alt = "Site Project 8" },
-                new { Src = "~/Uploads/WhatsApp Image 2026-04-22 at 3.41.45 PM.webp", Title = "Custom Complex", Alt = "Site Project 9" },
-                new { Src = "~/Uploads/WhatsApp Image 2026-04-22 at 3.41.46 PM.webp", Title = "Mobile Unit", Alt = "Site Project 10" },
-                new { Src = "~/Uploads/WhatsApp Image 2026-04-22 at 3.41.47 PM.webp", Title = "Industrial Office", Alt = "Site Project 11" },
-                new { Src = "~/Uploads/WhatsApp Image 2026-04-22 at 3.41.48 PM.webp", Title = "Site Accommodation", Alt = "Site Project 12" }
+                new { Src = "~/Uploads/WhatsApp Image 2026-04-22 at 3.41.42 PM (1).jpeg", Title = "Site Installation", Alt = "Site Project 1" },
+                new { Src = "~/Uploads/WhatsApp Image 2026-04-22 at 3.41.42 PM.jpeg", Title = "Modular Unit", Alt = "Site Project 2" },
+                new { Src = "~/Uploads/WhatsApp Image 2026-04-22 at 3.41.43 PM (1).jpeg", Title = "Custom Fabrication", Alt = "Site Project 3" },
+                new { Src = "~/Uploads/WhatsApp Image 2026-04-22 at 3.41.43 PM (2).jpeg", Title = "Office Complex", Alt = "Site Project 4" },
+                new { Src = "~/Uploads/WhatsApp Image 2026-04-22 at 3.41.43 PM (3).jpeg", Title = "Project Site", Alt = "Site Project 5" },
+                new { Src = "~/Uploads/WhatsApp Image 2026-04-22 at 3.41.43 PM.jpeg", Title = "Cabin Interior", Alt = "Site Project 6" },
+                new { Src = "~/Uploads/WhatsApp Image 2026-04-22 at 3.41.44 PM (1).jpeg", Title = "Industrial Unit", Alt = "Site Project 7" },
+                new { Src = "~/Uploads/WhatsApp Image 2026-04-22 at 3.41.44 PM (2).jpeg", Title = "Doha Site Setup", Alt = "Site Project 8" },
+                new { Src = "~/Uploads/WhatsApp Image 2026-04-22 at 3.41.45 PM.jpeg", Title = "Custom Complex", Alt = "Site Project 9" },
+                new { Src = "~/Uploads/WhatsApp Image 2026-04-22 at 3.41.46 PM.jpeg", Title = "Mobile Unit", Alt = "Site Project 10" },
+                new { Src = "~/Uploads/WhatsApp Image 2026-04-22 at 3.41.47 PM.jpeg", Title = "Industrial Office", Alt = "Site Project 11" },
+                new { Src = "~/Uploads/WhatsApp Image 2026-04-22 at 3.41.48 PM.jpeg", Title = "Site Accommodation", Alt = "Site Project 12" }
             };
         }
         <div class="container">
@@ -1451,7 +1450,7 @@
                         {
                         <div class="swiper-slide">
                             <div class="work-card position-relative overflow-hidden shadow-sm">
-                                <img src="@Url.Content(item.Src)" class="img-fluid w-100" alt="@item.Alt" loading="lazy">
+                                <img src="@Url.Content(item.Src)" class="img-fluid w-100" alt="@item.Alt">
                                 <div class="work-overlay position-absolute d-flex flex-column justify-content-end p-3">
                                     <h6 class="text-white fw-bold mb-0">@item.Title</h6>
                                 </div>
@@ -1613,7 +1612,7 @@
                         {
                             <div class="swiper-slide">
                                 <div class="client-logo-wrap">
-                                    <img src="~/Uploads/@client.Image" alt="@client.Title" class="client-logo" fetchpriority="high">
+                                    <img src="~/Uploads/@client.Image" alt="@client.Title" class="client-logo" loading="lazy">
                                 </div>
                             </div>
                         }
@@ -1624,7 +1623,7 @@
                         {
                             <div class="swiper-slide">
                                 <div class="client-logo-wrap">
-                                    <img src="~/Content/assets/img/clients/client-@(k).png" alt="Client @k" class="client-logo" fetchpriority="high">
+                                    <img src="~/Content/assets/img/clients/client-@(k).png" alt="Client @k" class="client-logo" loading="lazy">
                                 </div>
                             </div>
                         }
@@ -1750,7 +1749,7 @@
     <!-- 7. FINAL CTA SECTION EXACT CODE -->
     <section class="p-0 position-relative cta-industrial">
         <div class="position-absolute inset-0">
-            <img class="w-100 h-100 object-fit-cover cta-bg" alt="Steel fabrication work yard silhouette" src="https://images.unsplash.com/photo-1541976590-713941681591?q=80&w=2000"/ loading="lazy">
+            <img class="w-100 h-100 object-fit-cover cta-bg" alt="Steel fabrication work yard silhouette" src="https://images.unsplash.com/photo-1541976590-713941681591?q=80&w=2000"/>
             <div class="position-absolute inset-0 bg-dark opacity-75"></div>
             <div class="position-absolute inset-0 structural-grid opacity-25"></div>
         </div>

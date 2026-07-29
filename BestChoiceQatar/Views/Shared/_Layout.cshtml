@@ -25,8 +25,8 @@
 
     <!-- Favicons -->
 
-    <link href="~/Content/assets/img/favicon.webp" rel="icon">
-    <link href="~/Content/assets/img/apple-touch-icon.webp" rel="apple-touch-icon">
+    <link href="~/Content/assets/img/favicon.png" rel="icon">
+    <link href="~/Content/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -47,7 +47,7 @@
 
 
     <!-- Template Main CSS File (w/ Cache Buster V2.5) -->
-    <link href="~/Content/assets/css/style.css?v=19.0" rel="stylesheet">
+    <link href="~/Content/assets/css/style.css?v=18.1" rel="stylesheet">
 
     <!-- Infrastructure & Icons -->
     <link rel="stylesheet" href="@("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0")" />
@@ -60,7 +60,7 @@
       "@@context": "https://schema.org",
       "@@type": "LocalBusiness",
       "name": "BestChoice Contracting Qatar",
-      "image": "https://bestchoiceqatar.net/content/assets/img/logo/logo-1.webp",
+      "image": "https://bestchoiceqatar.net/content/assets/img/logo/logo-1.png",
       "@@id": "https://bestchoiceqatar.net",
       "url": "https://bestchoiceqatar.net",
       "telephone": "@settings.Mobile1",
@@ -85,7 +85,7 @@
         <div class="container-fluid px-lg-5 d-flex align-items-center justify-content-between w-100">
             <div class="logo">
                 <a href="/index">
-                    <img src="@Url.Content("~/content/assets/img/logo/animation.gif?v=1.1")" alt="Bestchoice Contracting" style="width: auto; display: block;" fetchpriority="high">
+                    <img src="@Url.Content("~/content/assets/img/logo/animation.gif?v=1.1")" alt="Bestchoice Contracting" style="width: auto; display: block;">
                 </a>
             </div>
 
@@ -146,7 +146,7 @@
                 <div class="row footer-top-row g-3 g-md-4">
                     <div class="col-lg-3 col-md-6 col-12 footer-contact">
                         <div class="footer-logo mb-3">
-                             <img src="@Url.Content("~/content/assets/img/logo/logo-1.webp")" width="220" alt="BestChoice Contracting Logo" fetchpriority="high">
+                             <img src="@Url.Content("~/content/assets/img/logo/logo-1.png")" width="220" alt="BestChoice Contracting Logo">
                         </div>
                         <p class="mt-3">
                             Bestchoice Contracting WLL, Office - 43, 1st floor,<br>
@@ -213,7 +213,7 @@
         <li class="mobile-nav-header">
             <div class="sidebar-header-wrapper">
                 <div class="sidebar-logo">
-                    <img src="@Url.Content("~/content/assets/img/logo/animation.gif")" alt="BestChoice Logo" fetchpriority="high">
+                    <img src="@Url.Content("~/content/assets/img/logo/animation.gif")" alt="BestChoice Logo">
                 </div>
                 <button type="button" class="mobile-nav-close-btn" id="mobile-nav-close" aria-label="Close Menu">
                     <i class="bi bi-x-lg"></i>
@@ -272,7 +272,7 @@
 
     <aside id="servicesDrawer" class="services-drawer" role="navigation" aria-label="Services Menu">
         <div class="services-drawer-header">
-            <img src="@Url.Content("~/Content/assets/img/logo/animation.gif")" alt="BestChoice" class="services-drawer-logo" fetchpriority="high">
+            <img src="@Url.Content("~/Content/assets/img/logo/animation.gif")" alt="BestChoice" class="services-drawer-logo">
             <button id="servicesDrawerClose" class="services-drawer-close" aria-label="Close Services Menu"><i class="bi bi-x-lg"></i></button>
         </div>
         <div class="services-drawer-body">
@@ -315,7 +315,7 @@
             <div class="pt-4 px-4 popup-content-box d-flex flex-column justify-content-between" style="height: 100vh; padding-bottom: 35px !important; overflow-y: auto !important; overflow-x: hidden !important;">
                 
                 <div class="logo-wrapper">
-                    <img class="logo" src="@Url.Content("~/content/assets/img/logo/animation.gif")" alt="BestChoice" style="width: 140px; height: auto; display: block !important; object-fit: contain;" fetchpriority="high">
+                    <img class="logo" src="@Url.Content("~/content/assets/img/logo/animation.gif")" alt="BestChoice" style="width: 140px; height: auto; display: block !important; object-fit: contain;">
                 </div>
 
                 <div class="content-section">
@@ -447,11 +447,6 @@
 
             // Extra support for custom close class
             document.querySelectorAll(".deskHamburgerClose").forEach(el => el.onclick = forceCloseAll);
-            document.querySelectorAll(".deskHamburgerOverlay").forEach(el => {
-                el.onclick = function(e) {
-                    if (e.target === this) forceCloseAll();
-                };
-            });
 
             document.querySelectorAll("#mobileDrawer .dropdown > a").forEach(link => {
                 link.onclick = function(e) {
@@ -469,63 +464,59 @@
         })();
     </script>
     
-    <!-- Safety Scroll Unlock v2.0: Aggressively prevent stuck scroll -->
-    <script>
-        (function() {
-            function unlockScroll() {
-                var anyOpen = document.querySelector("#mobileDrawer.open, #servicesDrawer.open, .deskHamburgerOverlay.open");
-                if (anyOpen) return; // Don't unlock if a drawer is intentionally open
-                document.documentElement.classList.remove("lock-scroll");
-                document.body.classList.remove("lock-scroll");
-                document.documentElement.classList.remove("glightbox-open");
-                document.body.classList.remove("glightbox-open");
-                document.documentElement.style.removeProperty("overflow");
-                document.body.style.removeProperty("overflow");
-                document.documentElement.style.removeProperty("touch-action");
-                document.body.style.removeProperty("touch-action");
-            }
-
-            // 1. Unlock IMMEDIATELY on script execution
-            unlockScroll();
-
-            // 2. Unlock on DOMContentLoaded (before images/3rd-party finish)
-            if (document.readyState === "loading") {
-                document.addEventListener("DOMContentLoaded", unlockScroll);
-            }
-
-            // 3. Fallback: Force unlock after 2 seconds no matter what
-            setTimeout(unlockScroll, 2000);
-
-            // 4. Patrol: Check every 500ms for first 5 seconds to catch rogue scroll locks
-            var patrolCount = 0;
-            var patrol = setInterval(function() {
-                unlockScroll();
-                patrolCount++;
-                if (patrolCount >= 10) clearInterval(patrol);
-            }, 500);
-
-            // 5. Also unlock on window load (belt-and-suspenders)
-            window.addEventListener("load", unlockScroll);
-
-            // 6. Unlock when user returns to tab
-            document.addEventListener("visibilitychange", function() {
-                if (document.visibilityState === "visible") unlockScroll();
-            });
-        })();
-    </script>
-
-    <!-- Native Smooth Scroll for Anchor Links -->
+    <!-- Lenis Smooth Scrolling -->
+    <script src="https://unpkg.com/lenis@1.1.2/dist/lenis.min.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
+            const lenis = new Lenis({
+                duration: 1.2,
+                easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), 
+                direction: 'vertical',
+                gestureDirection: 'vertical',
+                smooth: true,
+                smoothTouch: false,
+                touchMultiplier: 2,
+            });
+
+            function raf(time) {
+                lenis.raf(time);
+                requestAnimationFrame(raf);
+            }
+            requestAnimationFrame(raf);
+
+            // Smooth scroll for anchor links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
                     const href = this.getAttribute('href');
-                    if (href !== "#") {
+                    if(href !== "#") {
                         const target = document.querySelector(href);
                         if (target) {
                             e.preventDefault();
-                            target.scrollIntoView({ behavior: 'smooth' });
+                            lenis.scrollTo(target);
                         }
+                    }
+                });
+            });
+
+            // "Smooth scrolling to next page" - Scroll to top before navigating
+            document.querySelectorAll('a:not([href^="#"]):not([target="_blank"])').forEach(link => {
+                link.addEventListener('click', function (e) {
+                    const href = this.getAttribute('href');
+                    const isHashLink = href && href.startsWith('#');
+                    const isJsLink = href && href.startsWith('javascript:');
+                    const isMediaLink = href && (href.endsWith('.pdf') || href.endsWith('.jpg') || href.endsWith('.png'));
+                    const isSamePage = href === window.location.pathname || href === window.location.href;
+
+                    if (href && !isHashLink && !isJsLink && !isMediaLink && !isSamePage) {
+                        e.preventDefault();
+                        
+                        // Scroll to top smoothly then navigate
+                        lenis.scrollTo(0, {
+                            duration: 0.8,
+                            onComplete: () => {
+                                window.location.href = href;
+                            }
+                        });
                     }
                 });
             });

@@ -32,10 +32,6 @@
 }
 
 /* Layout Restoration - v12.0 Core Baseline */
-html, :root {
-    scroll-behavior: auto !important;
-}
-
 * {
     box-sizing: border-box;
 }
@@ -449,13 +445,7 @@ small {
     }
 
 /* v5.0 Viewport Lockdown & Layout Restoration */
-html {
-    width: 100% !important;
-    margin: 0 !important;
-    padding: 0 !important;
-}
-
-body {
+html, body {
     overflow-x: hidden !important;
     width: 100% !important;
     position: relative !important;
@@ -463,10 +453,13 @@ body {
     padding: 0 !important;
 }
 
-/* Scroll Lock Helper - Only block overflow, NOT touch-action (touch-action:none kills all mobile scroll) */
+/* Scroll Lock Helper */
 html.lock-scroll, 
 body.lock-scroll {
     overflow: hidden !important;
+    touch-action: none;
+    -webkit-overflow-scrolling: none;
+    overflow-scrolling: none;
 }
 
 /* ── Desktop Nav UL (NOT the mobile drawer) ── */
@@ -667,12 +660,9 @@ body.lock-scroll {
 
 .navbar-overlay.active {
   display: block !important;
-  pointer-events: auto !important;
 }
 
 /* 🚨 FLOATING ELEMENT LOCKDOWN v10.0 */
-#chatbase-bubble-window,
-.chatbase-bubble-window {
   position: fixed !important;
   right: 15px !important;
   left: auto !important;
@@ -2356,13 +2346,11 @@ section {
     visibility: hidden;
     opacity: 0;
     transition: 0.4s ease;
-    pointer-events: none; /* Prevent blocking interactions when closed */
 }
 
 .deskHamburgerOverlay.open {
     visibility: visible;
     opacity: 1;
-    pointer-events: auto; /* Allow interactions when open */
 }
 
 .deskHamburgerPopup {
@@ -2582,13 +2570,11 @@ section {
     visibility: hidden;
     opacity: 0;
     transition: opacity 0.4s ease, visibility 0.4s ease;
-    pointer-events: none; /* Prevent blocking interactions when closed */
 }
 
 .services-drawer-overlay.active {
     visibility: visible;
     opacity: 1;
-    pointer-events: auto; /* Allow interactions when open */
 }
 
 /* Drawer Panel */
@@ -2850,31 +2836,3 @@ section {
     background: rgba(255, 204, 0, 0.05);
 }
 
-
-
-/* ==========================================
-   SCROLL FIX v1.0 - EMERGENCY OVERRIDE
-   Prevents loader overlay from blocking scroll
-   ========================================== */
-#global-loader,
-.bc-loader-overlay,
-.bc-loader-overlay.show {
-    pointer-events: none !important;
-    -ms-touch-action: auto !important;
-    touch-action: auto !important;
-}
-
-/* ==========================================
-   SCROLL SAFEGUARD SYSTEM
-   Forces normal scrolling behavior on html and body
-   whenever scroll lock classes are not active.
-   ========================================== */
-html:not(.lock-scroll):not(.glightbox-open) {
-    overflow-y: auto !important;
-    height: auto !important;
-}
-body:not(.lock-scroll):not(.glightbox-open) {
-    overflow-y: auto !important;
-    overflow-x: hidden !important;
-    height: auto !important;
-}
