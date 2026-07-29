@@ -1,4 +1,4 @@
-﻿:root {
+:root {
   --header-height: 70px;
   --header-height-scrolled: 65px;
   --header-logo-height: 50px;
@@ -445,7 +445,13 @@ small {
     }
 
 /* v5.0 Viewport Lockdown & Layout Restoration */
-html, body {
+html {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+body {
     overflow-x: hidden !important;
     width: 100% !important;
     position: relative !important;

@@ -447,6 +447,11 @@
 
             // Extra support for custom close class
             document.querySelectorAll(".deskHamburgerClose").forEach(el => el.onclick = forceCloseAll);
+            document.querySelectorAll(".deskHamburgerOverlay").forEach(el => {
+                el.onclick = function(e) {
+                    if (e.target === this) forceCloseAll();
+                };
+            });
 
             document.querySelectorAll("#mobileDrawer .dropdown > a").forEach(link => {
                 link.onclick = function(e) {
