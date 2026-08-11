@@ -167,6 +167,7 @@
                             <li><i class="bx bx-chevron-right"></i> <a target="_blank" href="~/Content/assets/Brochure/Brochure.html.pdf">Brochure</a></li>
                             <li><i class="bx bx-chevron-right"></i> <a href="/contact">Contact</a></li>
                             <li><i class="bx bx-chevron-right"></i> <a href="/faq">FAQ</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#" data-bs-toggle="modal" data-bs-target="#isoPdfModal">ISO Contracting Certificate</a></li>
                         </ul>
                     </div>
                     <div class="col-lg-3 col-md-6 col-6 footer-links footer-links--services">
@@ -363,6 +364,21 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <!-- ISO PDF Modal -->
+    <div class="modal fade" id="isoPdfModal" tabindex="-1" aria-labelledby="isoPdfModalLabel" aria-hidden="true" style="z-index: 2000010;">
+      <div class="modal-dialog modal-xl modal-dialog-centered" style="max-width: 90vw;">
+        <div class="modal-content">
+          <div class="modal-header" style="background: #ffcc00; color: #000; border-bottom: none;">
+            <h5 class="modal-title fw-bold" id="isoPdfModalLabel">ISO Contracting Certificate</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body p-0" style="height: 80vh;">
+            <iframe src="@Url.Content("~/Uploads/ISO-Best choice contracting.pdf")" width="100%" height="100%" style="border: none;"></iframe>
+          </div>
+        </div>
+      </div>
     </div>
 
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>

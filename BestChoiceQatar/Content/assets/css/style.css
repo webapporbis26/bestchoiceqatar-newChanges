@@ -1,3 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
+
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined' !important;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+}
+
 :root {
   --header-height: 70px;
   --header-height-scrolled: 65px;
@@ -992,7 +1009,7 @@ body.lock-scroll .premium-floating-nav {
 }
 
 #hero .hero-wrap {
-    height: var(--hero-height, 620px);
+    height: 620px;
 }
 
 #hero .hero-copy {
@@ -1017,15 +1034,10 @@ body.lock-scroll .premium-floating-nav {
     pointer-events: none !important;
 }
 
+/* Hero carousel: only the active slide may receive clicks (fade stacks all slides) */
 #hero .hero-swiper-premium .swiper-slide {
     pointer-events: none !important;
-    z-index: 1 !important;
-}
-
-#hero .hero-swiper-premium .swiper-slide .hero-content,
-#hero .hero-swiper-premium .swiper-slide .hero-content * {
-    pointer-events: none !important;
-    visibility: hidden;
+    z-index: 0 !important;
 }
 
 #hero .hero-swiper-premium .swiper-slide.swiper-slide-active {
@@ -1033,9 +1045,12 @@ body.lock-scroll .premium-floating-nav {
     z-index: 5 !important;
 }
 
-#hero .hero-swiper-premium .swiper-slide.swiper-slide-active .hero-content,
-#hero .hero-swiper-premium .swiper-slide.swiper-slide-active .hero-content * {
-    visibility: visible;
+#hero .hero-swiper-premium .swiper-slide:not(.swiper-slide-active) .hero-content {
+    visibility: hidden;
+    pointer-events: none !important;
+}
+
+#hero .swiper-slide-active .hero-content {
     pointer-events: auto !important;
 }
 
@@ -1060,7 +1075,6 @@ body.lock-scroll .premium-floating-nav {
 
 #hero .hero-swiper-premium .swiper-slide-active {
     pointer-events: auto !important;
-    cursor: pointer !important;
 }
 
 #hero .hero-pagination {
@@ -1070,47 +1084,31 @@ body.lock-scroll .premium-floating-nav {
 
 @media (max-width: 991.98px) {
     #hero .hero-actions {
-        flex-direction: row;
-        flex-wrap: wrap;
+        flex-direction: column;
         align-items: center;
-        justify-content: center;
-        gap: 12px;
+        gap: 10px;
     }
 
     #hero .hero-actions .btn-bc,
     #hero .hero-actions--compact .btn-bc {
         width: auto;
-        max-width: none;
+        max-width: min(280px, 82vw);
         flex: none;
         min-width: 0;
-        white-space: nowrap;
     }
 
     #hero .hero-actions--compact {
-        flex-direction: row;
-        flex-wrap: wrap;
+        flex-direction: column;
         align-items: center;
     }
 }
 
 @media (max-width: 575.98px) {
-    #hero .hero-actions {
-        flex-direction: column !important;
-        align-items: center !important;
-        width: 100% !important;
-        box-sizing: border-box;
-        padding: 0 15px;
-    }
     #hero .hero-actions .btn-bc,
     #hero .hero-actions--compact .btn-bc {
-        width: 100% !important;
-        max-width: 320px !important;
-        padding: 11px 18px;
-        font-size: 0.72rem;
-        letter-spacing: 0.8px;
-        box-sizing: border-box;
-        justify-content: center;
-        white-space: nowrap;
+        max-width: min(240px, 78vw);
+        padding: 9px 14px;
+        font-size: 0.62rem;
     }
 }
 
