@@ -4,7 +4,7 @@ const path = require('path');
 
 const BASE_DIR = path.join(__dirname, 'BestChoiceQatar');
 const VIEWS_DIR = path.join(BASE_DIR, 'Views');
-const PORT = 3000;
+const PORT = 3001;
 
 const MIME_TYPES = {
   '.html': 'text/html; charset=utf-8',
