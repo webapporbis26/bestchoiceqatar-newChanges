@@ -181,7 +181,8 @@ namespace BestChoiceQatar.Controllers
         [ActionName("security-guard-cabins")]
         public ActionResult SecurityGuardCabins()
         {
-            return View();
+            // 301: standalone thin page retired — canonical product page is /product/security-guard-cabins
+            return RedirectPermanent("/product/security-guard-cabins");
         }
 
         [Route("portable-toilets")]
