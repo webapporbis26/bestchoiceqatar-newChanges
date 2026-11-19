@@ -149,6 +149,13 @@ namespace BestChoiceQatar.Controllers
             return View();
         }
 
+        [ActionName("portable-cabin-price-in-qatar")]
+        public ActionResult portable_cabin_price_in_qatar()
+        {
+            ViewBag.Message = "Your contact page.";
+            return View();
+        }
+
         [ActionName("site-cabins-offices-welfare-accommodation")]
         public ActionResult site_cabins_offices_welfare_accommodation()
         {
