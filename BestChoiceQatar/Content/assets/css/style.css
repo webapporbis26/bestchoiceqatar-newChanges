@@ -2834,3 +2834,13 @@ section {
     background: rgba(255, 204, 0, 0.05);
 }
 
+/* Mobile: disable scroll-reveal animations — content must be visible immediately.
+   AOS hides [data-aos] elements at opacity:0 until they animate in, which leaves
+   long white blanks while scrolling on slow mobile connections. */
+@media (max-width: 767px) {
+  [data-aos] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
