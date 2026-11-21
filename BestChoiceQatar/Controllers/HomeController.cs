@@ -156,6 +156,41 @@ namespace BestChoiceQatar.Controllers
             return View();
         }
 
+        [ActionName("shipping-container-modifications-qatar")]
+        public ActionResult shipping_container_modifications_qatar()
+        {
+            ViewBag.Message = "Your contact page.";
+            return View();
+        }
+
+        [ActionName("portable-cabins-oil-gas-qatar")]
+        public ActionResult portable_cabins_oil_gas_qatar()
+        {
+            ViewBag.Message = "Your contact page.";
+            return View();
+        }
+
+        [ActionName("portable-cabins-events-qatar")]
+        public ActionResult portable_cabins_events_qatar()
+        {
+            ViewBag.Message = "Your contact page.";
+            return View();
+        }
+
+        [ActionName("portable-cabin-maintenance-qatar")]
+        public ActionResult portable_cabin_maintenance_qatar()
+        {
+            ViewBag.Message = "Your contact page.";
+            return View();
+        }
+
+        [ActionName("custom-portable-cabins-qatar")]
+        public ActionResult custom_portable_cabins_qatar()
+        {
+            ViewBag.Message = "Your contact page.";
+            return View();
+        }
+
         [ActionName("site-cabins-offices-welfare-accommodation")]
         public ActionResult site_cabins_offices_welfare_accommodation()
         {
@@ -190,6 +225,30 @@ namespace BestChoiceQatar.Controllers
         {
             // 301: standalone thin page retired — canonical product page is /product/security-guard-cabins
             return RedirectPermanent("/product/security-guard-cabins");
+        }
+
+        [Route("labor-camps-accommodation")]
+        [ActionName("labor-camps-accommodation")]
+        public ActionResult LaborCampsAccommodation()
+        {
+            // 301: standalone thin page retired — canonical product page is /product/labor-camps-accommodation
+            return RedirectPermanent("/product/labor-camps-accommodation");
+        }
+
+        [Route("single-double-story-cabins")]
+        [ActionName("single-double-story-cabins")]
+        public ActionResult SingleDoubleStoryCabins()
+        {
+            // 301: standalone thin page retired — canonical product page is /product/single-double-story-cabins
+            return RedirectPermanent("/product/single-double-story-cabins");
+        }
+
+        [Route("toilet-sanitary-cabins")]
+        [ActionName("toilet-sanitary-cabins")]
+        public ActionResult ToiletSanitaryCabins()
+        {
+            // 301: standalone thin page retired — canonical product page is /product/toilet-sanitary-cabins
+            return RedirectPermanent("/product/toilet-sanitary-cabins");
         }
 
         [Route("portable-toilets")]
