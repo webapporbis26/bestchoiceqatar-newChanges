@@ -361,3 +361,5 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+# SEO root files live in Plesk httpdocs outside the repo — never commit
+seo-files/
