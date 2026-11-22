@@ -29,6 +29,8 @@
         public string MetaDescription { get; set; }
         public string MetaKeywords { get; set; }
         public string SectionLabel { get; set; }
+        public List<KeyValuePair<string, string>> Faqs { get; set; }
+        public string IndicativePrice { get; set; }
     }
 
     public List<ServiceModel> GetProductData()
@@ -60,7 +62,15 @@
                 },
                 GalleryImages = new List<string> { "/Content/assets/img/Products/cabin/cabin-1.jpg", "/Uploads/WhatsApp Image 2026-04-22 at 3.41.42 PM.jpeg", "/Uploads/WhatsApp Image 2026-04-22 at 3.41.43 PM (2).jpeg" },
                 MetaDescription = "Premium portable office cabins in Qatar. Professional site office solutions.",
-                MetaKeywords = "portable office qatar, site office doha, porta cabin office"
+                MetaKeywords = "portable office qatar, site office doha, porta cabin office",
+                Faqs = new List<KeyValuePair<string, string>> {
+                    new KeyValuePair<string, string>("What sizes do portable office cabins come in?", "Our standard office cabins are 3M x 6M, with an indicative starting price of QAR 8,000, and 3.75M x 7M large units from QAR 14,000. Every cabin is built to order, so custom dimensions and interior layouts are available."),
+                    new KeyValuePair<string, string>("Are office cabins air-conditioned for Qatar summers?", "Yes. Every office cabin is fitted with T3 tropical-rated AC provisions designed for 50°C+ heat, along with EPS or Rockwool sandwich-panel insulation."),
+                    new KeyValuePair<string, string>("How long does delivery and installation take?", "Cabins are delivered turnkey, fully assembled or flat-pack, with on-site installation by our own crew. Most standard cabins are delivered and installed within a few weeks of order confirmation."),
+                    new KeyValuePair<string, string>("Can the interior layout be customised?", "Yes. Interiors can be open-plan or partitioned, with gypsum or PVC panel finishes, luxury vinyl flooring, LED lighting and dedicated power points to match your corporate standards."),
+                    new KeyValuePair<string, string>("Where are BestChoice office cabins used?", "On construction and infrastructure sites, oil and gas projects, and commercial sites across Doha, Lusail, Ras Laffan, Mesaieed, Al Khor, Dukhan, Al Wakrah, Al Rayyan and Umm Salal.")
+                },
+                IndicativePrice = "8000"
             },
             new ServiceModel {
                 Slug = "portable-site-cabins",
@@ -94,7 +104,14 @@
                     "/Uploads/Pre Fab/desktop/WhatsApp Image 2026-08-09 at 3.16.26 PM (2).webp"
                 },
                 MetaDescription = "Durable portable site cabins for Qatar construction projects.",
-                MetaKeywords = "site cabin qatar, workforce accommodation doha, industrial units"
+                MetaKeywords = "site cabin qatar, workforce accommodation doha, industrial units",
+                Faqs = new List<KeyValuePair<string, string>> {
+                    new KeyValuePair<string, string>("What are portable site cabins used for?", "Workforce accommodation, site storage and operational control centres on construction and industrial project sites across Qatar."),
+                    new KeyValuePair<string, string>("Are site cabins built for harsh industrial sites?", "Yes. They are built on heavy-duty structural steel frames with weather-resistant seals, EPS or Rockwool insulation and 4-point ISO standard corner lifting hooks for crane transport."),
+                    new KeyValuePair<string, string>("Can site cabins be joined into larger compounds?", "Yes. The units are modular and can be interconnected to create large-scale site compounds, offices, welfare blocks and accommodation in one integrated setup."),
+                    new KeyValuePair<string, string>("Which industries use your site cabins?", "Construction and infrastructure, oil and gas — our site cabins are the preferred choice for oil and gas sites in Ras Laffan and Mesaieed — as well as events and exhibitions."),
+                    new KeyValuePair<string, string>("How are site cabins delivered?", "Delivered turnkey with on-site installation by our own crew, fully assembled or flat-pack, anywhere in Qatar.")
+                }
             },
             new ServiceModel {
                 Slug = "security-guard-cabins",
@@ -134,7 +151,15 @@
                     "/Uploads/Security Cabin/mobile/05 (5).jpg"
                 },
                 MetaDescription = "Compact security guard cabins and checkpoints in Qatar.",
-                MetaKeywords = "guard cabin Qatar, security booth Doha, gate house cabis"
+                MetaKeywords = "guard cabin Qatar, security booth Doha, gate house cabis",
+                Faqs = new List<KeyValuePair<string, string>> {
+                    new KeyValuePair<string, string>("What size is a standard guard cabin?", "Our standard guard cabin is 2M x 3M, with an indicative starting price of QAR 22,000. Smaller 1.5M x 1.5M and 2.0M x 2.0M footprints are also available."),
+                    new KeyValuePair<string, string>("How quickly can a guard cabin be ready?", "Guard cabins are our fastest product — typically ready in 5 to 10 working days."),
+                    new KeyValuePair<string, string>("Can guards see all around from inside?", "Yes. The cabins are designed for 360-degree panoramic visibility with tempered glass sliding aluminium windows, so entry points and checkpoints can be monitored effectively."),
+                    new KeyValuePair<string, string>("Are guard cabins air-conditioned?", "Yes. Every unit includes full electrical fittings and AC provisions to keep guards alert through 24/7 shifts, even in 50°C+ Qatar heat."),
+                    new KeyValuePair<string, string>("Where are guard cabins used?", "At entrance gates and checkpoints for construction sites, residential compounds, commercial premises and events across Doha, Lusail, Al Khor, Ras Laffan and the rest of Qatar.")
+                },
+                IndicativePrice = "22000"
             },
             new ServiceModel {
                 Slug = "portable-toilets",
@@ -180,7 +205,15 @@
                     "/Uploads/Toilet/mobile/06 (14).jpeg"
                 },
                 MetaDescription = "Portable toilet and sanitary cabins for construction sites in Qatar.",
-                MetaKeywords = "toilet cabin Qatar, sanitary block Doha, portable WC"
+                MetaKeywords = "toilet cabin Qatar, sanitary block Doha, portable WC",
+                Faqs = new List<KeyValuePair<string, string>> {
+                    new KeyValuePair<string, string>("What types of toilet cabins do you supply?", "Individual WC units, shower blocks and full ablution complexes, plus VIP toilets for events. Every block can be configured with male and female separate entrances."),
+                    new KeyValuePair<string, string>("What does a toilet cabin cost?", "A standard toilet or bathroom cabin (2.4M x 4.8M) starts from QAR 12,000. Larger shower blocks and full ablution complexes are quoted per project."),
+                    new KeyValuePair<string, string>("Do the units work with site sewage systems?", "Yes. Every unit is pressure-tested before delivery and connects to site sewage tanks or mains, with optional integrated fresh and waste water tanks."),
+                    new KeyValuePair<string, string>("Are VIP toilets available for events?", "Yes. VIP toilets with hand-washing stations, urinals or showers are available for events and exhibitions, as well as for site use."),
+                    new KeyValuePair<string, string>("What finishes are used inside sanitary cabins?", "Anti-slip checkered aluminium or PVC flooring, moisture-resistant internal lining, anti-bacterial easy-clean wall surfaces and premium ceramic or stainless steel fittings.")
+                },
+                IndicativePrice = "12000"
             },
             new ServiceModel {
                 Slug = "container-office-cabins",
@@ -207,7 +240,15 @@
                 },
                 GalleryImages = new List<string> { "/Content/assets/img/Products/cabin/container-office-hero.png", "/Uploads/WhatsApp Image 2026-04-22 at 3.41.45 PM.jpeg", "/Uploads/Products/Fabrication-1.jpg" },
                 MetaDescription = "High-security container office conversions in Qatar. 20ft and 40ft units.",
-                MetaKeywords = "container office Qatar, shipping container conversion Doha, modified containers"
+                MetaKeywords = "container office Qatar, shipping container conversion Doha, modified containers",
+                Faqs = new List<KeyValuePair<string, string>> {
+                    new KeyValuePair<string, string>("What is the difference between a 20ft and a 40ft container office?", "The 20ft unit (6.06M) starts from QAR 35,000 and suits compact site offices, stores and workshops. The 40ft unit (12.19M) starts from QAR 55,000 and gives nearly double the floor area for larger offices, IT or server rooms and storage. High-cube options are also available."),
+                    new KeyValuePair<string, string>("Are container offices insulated for Qatar heat?", "Yes. Conversions use EPS or Rockwool insulation with gypsum, marine ply or steel-sheet internal lining, plus T3 tropical-rated AC provisions for 50°C+ heat."),
+                    new KeyValuePair<string, string>("Can container offices be stacked?", "Yes. The authentic ISO Corten steel structure is naturally stackable up to three levels high without additional external framework."),
+                    new KeyValuePair<string, string>("What are container offices used for?", "Site offices, IT and server rooms, remote site workshops, marketing suites and luxury site offices — anywhere security and structural strength matter."),
+                    new KeyValuePair<string, string>("How are container offices delivered?", "Each unit is a turnkey solution delivered fully fitted and ready for immediate operation, relocatable by crane or container handler.")
+                },
+                IndicativePrice = "35000"
             },
             new ServiceModel {
                 Slug = "modular-cabins",
@@ -311,7 +352,14 @@
                     "/Uploads/Modular/mobile/03 (6).jpeg"
                 },
                 MetaDescription = "Single and double story portable cabins in Qatar. G+1 and G+2 stacked modular cabins for space-constrained sites.",
-                MetaKeywords = "single story cabin qatar, double story cabin qatar, stacked cabins doha, G+1 cabin"
+                MetaKeywords = "single story cabin qatar, double story cabin qatar, stacked cabins doha, G+1 cabin",
+                Faqs = new List<KeyValuePair<string, string>> {
+                    new KeyValuePair<string, string>("What configurations are available?", "Single and double-storey blocks in G+1 and G+2 configurations, so you can double your floor area on the same site footprint."),
+                    new KeyValuePair<string, string>("How is safety handled on multi-storey cabins?", "Units use reinforced structural steel columns and bracing, anti-skid steel staircases with safety handrails, walkways with safety railings, and interconnected fire alarm and emergency lighting systems."),
+                    new KeyValuePair<string, string>("What are multi-storey cabins used for?", "Large site headquarters, compound management hubs and multi-tenant site facilities where land area is at a premium."),
+                    new KeyValuePair<string, string>("Can floors be partitioned differently?", "Yes. Modular floor plans are available open-plan or with cellular partitions, with enhanced sound and thermal insulation between floors."),
+                    new KeyValuePair<string, string>("How long does a multi-storey cabin take to build?", "Each block is engineered to order with fast-track fabrication once the design is approved, then assembled rapidly on site by specialised rigging teams.")
+                }
             },
             new ServiceModel {
                 Slug = "labor-camps-accommodation",
@@ -398,9 +446,52 @@
                     "/Uploads/Toilet/mobile/06 (14).jpeg"
                 },
                 MetaDescription = "Toilet and sanitary cabins in Qatar. Portable WC, shower blocks and full ablution complexes for sites and events.",
-                MetaKeywords = "toilet cabin qatar, sanitary cabin doha, ablution block qatar, portable WC"
+                MetaKeywords = "toilet cabin qatar, sanitary cabin doha, ablution block qatar, portable WC",
+                Faqs = new List<KeyValuePair<string, string>> {
+                    new KeyValuePair<string, string>("What types of toilet cabins do you supply?", "Individual WC units, shower blocks and full ablution complexes, plus VIP toilets for events. Every block can be configured with male and female separate entrances."),
+                    new KeyValuePair<string, string>("What does a toilet cabin cost?", "A standard toilet or bathroom cabin (2.4M x 4.8M) starts from QAR 12,000. Larger shower blocks and full ablution complexes are quoted per project."),
+                    new KeyValuePair<string, string>("Do the units work with site sewage systems?", "Yes. Every unit is pressure-tested before delivery and connects to site sewage tanks or mains, with optional integrated fresh and waste water tanks."),
+                    new KeyValuePair<string, string>("Are VIP toilets available for events?", "Yes. VIP toilets with hand-washing stations, urinals or showers are available for events and exhibitions, as well as for site use."),
+                    new KeyValuePair<string, string>("What finishes are used inside sanitary cabins?", "Anti-slip checkered aluminium or PVC flooring, moisture-resistant internal lining, anti-bacterial easy-clean wall surfaces and premium ceramic or stainless steel fittings.")
+                },
+                IndicativePrice = "12000"
             }
         };
+    }
+
+    public static string BuildFaqJsonLd(List<KeyValuePair<string, string>> faqs)
+    {
+        var sb = new System.Text.StringBuilder();
+        sb.Append("<script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"FAQPage\", \"mainEntity\": [");
+        for (int i = 0; i < faqs.Count; i++)
+        {
+            if (i > 0) { sb.Append(","); }
+            sb.Append("{\"@type\": \"Question\", \"name\": ");
+            sb.Append(System.Web.Helpers.Json.Encode(faqs[i].Key));
+            sb.Append(", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": ");
+            sb.Append(System.Web.Helpers.Json.Encode(faqs[i].Value));
+            sb.Append("}}");
+        }
+        sb.Append("]}</script>");
+        return sb.ToString();
+    }
+
+    public static string BuildProductJsonLd(ServiceModel product)
+    {
+        var sb = new System.Text.StringBuilder();
+        sb.Append("<script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"Product\", \"name\": ");
+        sb.Append(System.Web.Helpers.Json.Encode(product.Title + " | BestChoice Contracting Qatar"));
+        sb.Append(", \"description\": ");
+        sb.Append(System.Web.Helpers.Json.Encode(product.MetaDescription));
+        sb.Append(", \"brand\": {\"@type\": \"Brand\", \"name\": \"BestChoice Contracting Qatar\"}, \"category\": \"Portable Cabins\"");
+        if (!string.IsNullOrEmpty(product.IndicativePrice))
+        {
+            sb.Append(", \"offers\": {\"@type\": \"Offer\", \"priceCurrency\": \"QAR\", \"price\": ");
+            sb.Append(product.IndicativePrice);
+            sb.Append(", \"availability\": \"https://schema.org/PreOrder\", \"itemCondition\": \"https://schema.org/NewCondition\"}");
+        }
+        sb.Append("}</script>");
+        return sb.ToString();
     }
 }
 
@@ -701,6 +792,14 @@
         .spec-table th { width: 100%; display: block; padding-bottom: 5px; }
         .spec-table td { display: block; padding-top: 0; padding-bottom: 15px; }
     }
+
+    /* --- FAQ Section --- */
+    .faq-item { border: 1px solid #eee; margin-bottom: 12px; background: #fff; }
+    .faq-item summary { padding: 20px 24px; font-weight: 700; cursor: pointer; list-style: none; font-size: 1.05rem; color: #111; }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary:after { content: "+"; float: right; color: #ffcc00; font-size: 1.4rem; line-height: 1; }
+    .faq-item[open ] summary:after { content: "\2013"; }
+    .faq-item .faq-answer { padding: 0 24px 20px; color: #555; line-height: 1.8; }
 </style>
 
 
@@ -761,6 +860,23 @@
                                 </tbody>
                             </table>
                         </div>
+
+                        @if (product.Faqs != null && product.Faqs.Count > 0)
+                        {
+                            <div class="faq-section mt-5" data-aos="fade-up">
+                                <h2 class="section-label mb-4">Frequently Asked Questions</h2>
+                                @foreach (var faq in product.Faqs)
+                                {
+                                    <details class="faq-item">
+                                        <summary>@faq.Key</summary>
+                                        <div class="faq-answer">@faq.Value</div>
+                                    </details>
+                                }
+                                <p class="mt-4 mb-0 small" style="color:#888;">See indicative prices in our <a href="/portable-cabin-price-in-qatar" style="color:#ffcc00;">portable cabin price guide</a> or learn how cabins are built on our <a href="/portable-cabin-fabrication" style="color:#ffcc00;">fabrication page</a>.</p>
+                            </div>
+                            @Html.Raw(BuildFaqJsonLd(product.Faqs))
+                        }
+                        @Html.Raw(BuildProductJsonLd(product))
                     </div>
                 </div>
 
