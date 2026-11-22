@@ -2834,13 +2834,12 @@ section {
     background: rgba(255, 204, 0, 0.05);
 }
 
-/* Mobile: disable scroll-reveal animations — content must be visible immediately.
+/* Disable scroll-reveal animations on all screens — content must be visible immediately.
    AOS hides [data-aos] elements at opacity:0 until they animate in, which leaves
-   long white blanks while scrolling on slow mobile connections. */
-@media (max-width: 767px) {
-  [data-aos] {
-    opacity: 1 !important;
-    transform: none !important;
-    transition: none !important;
-  }
+   long white blanks while scrolling (first reported on mobile, now seen on desktop too:
+   only the hero looks loaded until sections fade in). */
+[data-aos] {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
 }
