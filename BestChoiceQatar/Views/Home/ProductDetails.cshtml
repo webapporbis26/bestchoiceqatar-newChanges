@@ -876,7 +876,11 @@
                             </div>
                             @Html.Raw(BuildFaqJsonLd(product.Faqs))
                         }
-                        @Html.Raw(BuildProductJsonLd(product))
+                        @* Product schema only when an indicative price exists: without offers/review/aggregateRating Google flags Product as an error. Products without a price keep their FAQ schema only. *@
+                        @if (!string.IsNullOrEmpty(product.IndicativePrice))
+                        {
+                            @Html.Raw(BuildProductJsonLd(product))
+                        }
                     </div>
                 </div>
 
