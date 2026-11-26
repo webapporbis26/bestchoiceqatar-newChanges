@@ -22,12 +22,13 @@
     <title>@ViewBag.Title</title>
     <meta content="@ViewBag.description" name="description">
     <meta content="@ViewBag.keywords" name="keywords">
-    @* Canonical URL: self-referencing, lowercase, www. /index and /Home/index point to the root, so Google stops treating them as duplicates of the homepage. *@
+    @* Canonical URL: self-referencing, lowercase, www. /index and /Home/index point to the root, so Google stops treating them as duplicates of the homepage. NOTE: the full URL is built in code — "@var" right after text (".net@var") is read by Razor as an email address and stays literal. *@
     @{
         var canonicalPath = Request.Path.ToString().ToLowerInvariant();
         if (canonicalPath == "/index" || canonicalPath == "/home/index") { canonicalPath = "/"; }
+        var canonicalUrl = "https://www.bestchoiceqatar.net" + canonicalPath;
     }
-    <link rel="canonical" href="https://www.bestchoiceqatar.net@canonicalPath" />
+    <link rel="canonical" href="@canonicalUrl" />
 
     <!-- Favicons -->
 
