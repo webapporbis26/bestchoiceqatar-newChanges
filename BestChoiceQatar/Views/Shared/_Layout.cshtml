@@ -22,6 +22,12 @@
     <title>@ViewBag.Title</title>
     <meta content="@ViewBag.description" name="description">
     <meta content="@ViewBag.keywords" name="keywords">
+    @* Canonical URL: self-referencing, lowercase, www. /index and /Home/index point to the root, so Google stops treating them as duplicates of the homepage. *@
+    @{
+        var canonicalPath = Request.Path.ToString().ToLowerInvariant();
+        if (canonicalPath == "/index" || canonicalPath == "/home/index") { canonicalPath = "/"; }
+    }
+    <link rel="canonical" href="https://www.bestchoiceqatar.net@canonicalPath" />
 
     <!-- Favicons -->
 
